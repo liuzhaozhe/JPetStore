@@ -107,4 +107,17 @@ public class Orderitem {
         result = 31 * result + (customerId != null ? customerId.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str += "清单ID：\t" + id + "\n";
+        str += "商品编号：\t" + productId + "\n";
+        str += "商品名称：\t" + productName + "\n";
+        str += "商品单价：\t" + productPrice + "\n";
+        str += "商品数量：\t" + amount + "\n";
+        str += "账单ID：\t" + orderId + "\n";
+        str += "用户ID：\t" + customerId;
+        return str;
+    }
 }
