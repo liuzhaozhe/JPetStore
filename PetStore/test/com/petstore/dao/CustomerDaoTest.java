@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by 12145 on 2016/3/3.
+ * Created by hezhujun on 2016/3/3.
  */
 public class CustomerDaoTest {
 
@@ -33,15 +33,21 @@ public class CustomerDaoTest {
     public void testFindByName() throws Exception {
         Customer customer = CustomerDao.getInstance().findByName("俞志云");
         if(customer != null) {
-            System.out.println(customer.getId());
-            System.out.println(customer.getUsername());
-            System.out.println(customer.getPassword());
-            System.out.println(customer.getAddress());
-            System.out.println(customer.getEmail());
-            System.out.println(customer.getPhone());
+            System.out.println(customer.toString());
         } else {
             System.out.println("Cannot find");
         }
         DBConn.closeConn();
     }
+
+    @Test
+    public void testUpdate() throws Exception {
+        Customer customer = CustomerDao.getInstance().findByName("俞志云");
+        customer.setAddress("铁道1舍522");
+        customer.setEmail("2723364262@qq.com");
+        boolean result = CustomerDao.getInstance().update(customer);
+        System.out.println("result:" + result);
+        DBConn.closeConn();
+    }
+
 }

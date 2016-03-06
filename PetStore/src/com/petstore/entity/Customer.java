@@ -92,4 +92,16 @@ public class Customer {
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str += "用户ID：\t" + id + "\n";
+        str += "用户名：\t" + username + "\n";
+        str += "用户密码：\t" + password + "\n";
+        str += "用户地址：\t" + address + "\n";
+        str += "用户邮箱：\t" + email + "\n";
+        str += "电话号码：\t" + phone;
+        return str;
+    }
 }

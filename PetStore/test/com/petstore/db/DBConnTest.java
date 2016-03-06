@@ -7,7 +7,7 @@ import java.sql.Connection;
 import static org.junit.Assert.*;
 
 /**
- * Created by 12145 on 2016/3/2.
+ * Created by hezhujun on 2016/3/2.
  */
 public class DBConnTest {
 

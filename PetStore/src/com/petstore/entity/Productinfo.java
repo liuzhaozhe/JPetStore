@@ -13,7 +13,7 @@ public class Productinfo {
     private BigDecimal price;               // 商品价格
     private int amount;                     // 商品库存
     private int sellCount;                  // 商品销售量
-    private int uploadFileId;               // 商品的图片地址
+    private String uploadFile;               // 商品的图片地址
     private String category2;               // 商品的类别名称
     private String category;                // 商品的总类别名称
 
@@ -65,12 +65,12 @@ public class Productinfo {
         this.sellCount = sellCount;
     }
 
-    public int getUploadFileId() {
-        return uploadFileId;
+    public String getUploadFile() {
+        return uploadFile;
     }
 
-    public void setUploadFileId(int uploadFileId) {
-        this.uploadFileId = uploadFileId;
+    public void setUploadFileId(String uploadFile) {
+        this.uploadFile = uploadFile;
     }
 
     public String getCategory2() {
@@ -91,6 +91,7 @@ public class Productinfo {
 
     /**
      * 比较对象
+     *
      * @param o
      * @return
      */
@@ -103,7 +104,7 @@ public class Productinfo {
 
         if (amount != that.amount) return false;
         if (sellCount != that.sellCount) return false;
-        if (uploadFileId != that.uploadFileId) return false;
+        if (uploadFile != null ? !uploadFile.equals(that.uploadFile) : that.uploadFile != null) return false;
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
@@ -122,9 +123,24 @@ public class Productinfo {
         result = 31 * result + (price != null ? price.hashCode() : 0);
         result = 31 * result + amount;
         result = 31 * result + sellCount;
-        result = 31 * result + uploadFileId;
+        result = 31 * result + (uploadFile != null ? uploadFile.hashCode() : 0);;
         result = 31 * result + (category2 != null ? category2.hashCode() : 0);
         result = 31 * result + (category != null ? category.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str += "商品编号：\t" + id + "\n";
+        str += "商品名称：\t" + name + "\n";
+        str += "商品描述：\t" + description + "\n";
+        str += "商品单价：\t" + price + "\n";
+        str += "总库存：\t" + amount + "\n";
+        str += "销售量：\t" + sellCount + "\n";
+        str += "图片地址：\t" + uploadFile + "\n";
+        str += "父类别：\t" + category2 + "\n";
+        str += "总类别：\t" + category;
+        return str;
     }
 }

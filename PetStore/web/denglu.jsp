@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="StyleSheet" href="./css/jpetstore.css" type="text/css"
+    <link rel="StyleSheet" href="css/jpetstore.css" type="text/css"
           media="screen" />
     <title>JpetStore</title>
 </head>

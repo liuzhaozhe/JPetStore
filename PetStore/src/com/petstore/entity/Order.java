@@ -128,4 +128,19 @@ public class Order {
         result = 31 * result + customerId;
         return result;
     }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str += "账单ID：\t" + id + "\n";
+        str += "账单编号：\t" + name + "\n";
+        str += "收货人：\t" + consignee + "\n";
+        str += "地址：\t" + address + "\n";
+        str += "电话号码：\t" + phone + "\n";
+        str += "总金额：\t" + totalPrice + "\n";
+        str += "时间：\t" + createTime + "\n";
+        str += "支付方式：\t" + paymentWay + "\n";
+        str += "用户ID：\t" + customerId;
+        return str;
+    }
 }
