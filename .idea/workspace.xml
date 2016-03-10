@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5a6e3a14-0a17-4d0e-8b94-4da90ef5453a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderItemDao.java" afterPath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderItemDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/test/com/petstore/dao/OrderItemDaoTest.java" afterPath="$PROJECT_DIR$/PetStore/test/com/petstore/dao/OrderItemDaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/ProductInfoDao.java" afterPath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/ProductInfoDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/test/com/petstore/dao/ProductInfoDaoTest.java" afterPath="$PROJECT_DIR$/PetStore/test/com/petstore/dao/ProductInfoDaoTest.java" />
     </list>
     <ignored path="JPetStore.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,18 +43,7 @@
     <favorites_list name="JPetStore" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="OrderItemDaoTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PetStore/test/com/petstore/dao/OrderItemDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73866093">
-              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,9 +74,7 @@
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/entity/Orderitem.java" />
         <option value="$PROJECT_DIR$/PetStore/web/denglu.jsp" />
         <option value="$PROJECT_DIR$/PetStore/web/index.jsp" />
-        <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/ProductInfoDao.java" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/entity/Productinfo.java" />
-        <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/ProductInfoDaoTest.java" />
         <option value="$PROJECT_DIR$/PetStore/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java" />
         <option value="$PROJECT_DIR$/PetStore/test/com/petstore/db/DBConnTest.java" />
@@ -98,6 +85,8 @@
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderItemDao.java" />
         <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/OrderItemDaoTest.java" />
+        <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/ProductInfoDao.java" />
+        <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/ProductInfoDaoTest.java" />
       </list>
     </option>
   </component>
@@ -338,8 +327,8 @@
       <recent name="D:\workspace\IdeaProjects\JPetStore\PetStore\web" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderItemDaoTest.testDeleteByCustomerId">
-    <configuration default="false" name="OrderItemDaoTest.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ProductInfoDaoTest.testSave">
+    <configuration default="false" name="ProductInfoDaoTest.testFindByCategory2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.petstore.dao.*" />
@@ -350,8 +339,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.petstore.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.OrderItemDaoTest" />
-      <option name="METHOD_NAME" value="testSave" />
+      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.ProductInfoDaoTest" />
+      <option name="METHOD_NAME" value="testFindByCategory2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -365,7 +354,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OrderItemDaoTest.testFindByOrderId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ProductInfoDaoTest.testGetCategory2ByCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.petstore.dao.*" />
@@ -376,8 +365,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.petstore.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.OrderItemDaoTest" />
-      <option name="METHOD_NAME" value="testFindByOrderId" />
+      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.ProductInfoDaoTest" />
+      <option name="METHOD_NAME" value="testGetCategory2ByCategory" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -391,7 +380,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OrderItemDaoTest.testFindByCustomerId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ProductInfoDaoTest.testGetCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.petstore.dao.*" />
@@ -402,8 +391,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.petstore.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.OrderItemDaoTest" />
-      <option name="METHOD_NAME" value="testFindByCustomerId" />
+      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.ProductInfoDaoTest" />
+      <option name="METHOD_NAME" value="testGetCategory" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -417,7 +406,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OrderItemDaoTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ProductInfoDaoTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.petstore.dao.*" />
@@ -428,7 +417,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.petstore.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.OrderItemDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.ProductInfoDaoTest" />
       <option name="METHOD_NAME" value="testUpdate" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -443,7 +432,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OrderItemDaoTest.testDeleteByCustomerId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ProductInfoDaoTest.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.petstore.dao.*" />
@@ -454,8 +443,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.petstore.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.OrderItemDaoTest" />
-      <option name="METHOD_NAME" value="testDeleteByCustomerId" />
+      <option name="MAIN_CLASS_NAME" value="com.petstore.dao.ProductInfoDaoTest" />
+      <option name="METHOD_NAME" value="testSave" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -976,19 +965,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0.68" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testSave" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testFindByOrderId" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testFindByCustomerId" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testUpdate" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testDeleteByCustomerId" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testFindByCategory2" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testGetCategory2ByCategory" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testGetCategory" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testUpdate" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testSave" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testDeleteByCustomerId" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testUpdate" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testFindByCustomerId" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testFindByOrderId" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.OrderItemDaoTest.testSave" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testSave" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testUpdate" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testGetCategory" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testGetCategory2ByCategory" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ProductInfoDaoTest.testFindByCategory2" />
       </list>
     </recent_temporary>
   </component>
@@ -1010,7 +999,7 @@
       <workItem from="1457493762209" duration="77000" />
       <workItem from="1457514475118" duration="169000" />
       <workItem from="1457576711263" duration="1688000" />
-      <workItem from="1457583677489" duration="5982000" />
+      <workItem from="1457583677489" duration="6492000" />
     </task>
     <task id="LOCAL-00001" summary="更改数据库，缩减为4个表，加入js文件夹，完成DAO并测试完毕">
       <created>1457274614951</created>
@@ -1060,25 +1049,16 @@
       <option name="project" value="LOCAL" />
       <updated>1457597693030</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="更改OrderItem，测试成功">
+      <created>1457598357038</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1457598357038</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CustomerDaoTest_testFindByName - 2016.03.10 at 15h 44m 32s.xml">
-      <configuration name="CustomerDaoTest.testFindByName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerDaoTest_testUpdate - 2016.03.10 at 15h 43m 33s.xml">
-      <configuration name="CustomerDaoTest.testUpdate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderDaoTest_testFindByCustomerId - 2016.03.10 at 16h 12m 35s.xml">
-      <configuration name="OrderDaoTest.testFindByCustomerId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderDaoTest_testSave - 2016.03.10 at 16h 13m 34s.xml">
-      <configuration name="OrderDaoTest.testSave" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderDaoTest_testSave - 2016.03.10 at 16h 14m 16s.xml">
-      <configuration name="OrderDaoTest.testSave" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="OrderItemDaoTest_testDeleteByCustomerId - 2016.03.10 at 16h 25m 23s.xml">
       <configuration name="OrderItemDaoTest.testDeleteByCustomerId" configurationId="JUnit" />
     </history-entry>
@@ -1088,19 +1068,34 @@
     <history-entry file="OrderItemDaoTest_testFindByOrderId - 2016.03.10 at 16h 24m 52s.xml">
       <configuration name="OrderItemDaoTest.testFindByOrderId" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderItemDaoTest_testSave - 2016.03.10 at 16h 24m 35s.xml">
-      <configuration name="OrderItemDaoTest.testSave" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="OrderItemDaoTest_testUpdate - 2016.03.10 at 16h 25m 14s.xml">
       <configuration name="OrderItemDaoTest.testUpdate" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ProductInfoDaoTest_testFindByCategory2 - 2016.03.10 at 16h 32m 41s.xml">
+      <configuration name="ProductInfoDaoTest.testFindByCategory2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductInfoDaoTest_testGetCategory - 2016.03.10 at 16h 32m 55s.xml">
+      <configuration name="ProductInfoDaoTest.testGetCategory" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductInfoDaoTest_testGetCategory2ByCategory - 2016.03.10 at 16h 32m 48s.xml">
+      <configuration name="ProductInfoDaoTest.testGetCategory2ByCategory" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductInfoDaoTest_testSave - 2016.03.10 at 16h 33m 31s.xml">
+      <configuration name="ProductInfoDaoTest.testSave" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductInfoDaoTest_testSave - 2016.03.10 at 16h 33m 58s.xml">
+      <configuration name="ProductInfoDaoTest.testSave" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductInfoDaoTest_testUpdate - 2016.03.10 at 16h 33m 11s.xml">
+      <configuration name="ProductInfoDaoTest.testUpdate" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31724000" />
+    <option name="totallyTimeSpent" value="32234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1179,7 +1174,8 @@
     <MESSAGE value="修改一些细节" />
     <MESSAGE value="修改一些细节，更改OrderDao内容" />
     <MESSAGE value="更改OrderDao内容，测试成功" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改OrderDao内容，测试成功" />
+    <MESSAGE value="更改OrderItem，测试成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="更改OrderItem，测试成功" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1340,24 +1336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PetStore/test/com/petstore/dao/ProductInfoDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.670282">
-          <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/entity/Productinfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5878525">
           <caret line="142" column="35" selection-start-line="142" selection-start-column="35" selection-end-line="142" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/ProductInfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.27765727">
-          <caret line="83" column="73" selection-start-line="83" selection-start-column="73" selection-end-line="83" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -1496,6 +1478,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.73866093">
           <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/ProductInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2462203">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding>
+            <marker date="1457598730433" expanded="true" signature="1011:1166" placeholder="insert into productinfo... " />
+            <marker date="1457598730433" expanded="true" signature="2734:2779" placeholder="select * fro... productinfo" />
+            <marker date="1457598730433" expanded="true" signature="4487:4548" placeholder="select disti... productinfo" />
+            <marker date="1457598730433" expanded="true" signature="5554:5595" placeholder="select disti... productinfo" />
+            <marker date="1457598730433" expanded="true" signature="6578:6639" placeholder="update produ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PetStore/test/com/petstore/dao/ProductInfoDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4924406">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding />
         </state>
       </provider>

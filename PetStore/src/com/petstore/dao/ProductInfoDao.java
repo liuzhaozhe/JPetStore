@@ -1,10 +1,10 @@
 package com.petstore.dao;
 
-import com.mysql.jdbc.PreparedStatement;
-import com.petstore.db.DBConn;
+import com.petstore.db.JDBCUtil;
 import com.petstore.entity.Productinfo;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -33,11 +33,14 @@ public class ProductInfoDao {
      */
     public boolean save(Productinfo productinfo) {
         boolean result = false;
+        Connection connection = null;
+        PreparedStatement statement = null;
         try {
-            Connection connection = DBConn.getConn();                           // 获取数据库连接
+//            connection = DBConn.getConn();                           // 获取数据库连接
+            connection = JDBCUtil.getConnection();
             String sql = "insert into productinfo(id, name, description, price, amount, sellCount," +
                     " uploadFile, category2, category)values(?,?,?,?,?,?,?,?,?)";
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
+            statement = (PreparedStatement) connection.prepareStatement(sql);
             statement.setString(1, productinfo.getId());                            // 加入参数
             statement.setString(2, productinfo.getName());
             statement.setString(3, productinfo.getDescription());
@@ -53,6 +56,9 @@ public class ProductInfoDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
         }
         return result;
     }
@@ -65,12 +71,16 @@ public class ProductInfoDao {
      */
     public List<Productinfo> findByCategory2(String category2) {
         List<Productinfo> productinfos = new ArrayList<Productinfo>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
         try {
-            Connection connection = DBConn.getConn();                                   // 获取数据看连接
+//            Connection connection = DBConn.getConn();                                   // 获取数据看连接
+            connection = JDBCUtil.getConnection();
             String sql = "select * from productinfo where category2 = ?";
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
+            statement = (PreparedStatement) connection.prepareStatement(sql);
             statement.setString(1, category2);
-            ResultSet resultSet = statement.executeQuery();
+            resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Productinfo productinfo = new Productinfo();
                 productinfo.setId(resultSet.getString("id"));
@@ -86,6 +96,10 @@ public class ProductInfoDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            JDBCUtil.close(resultSet);
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
         }
         return productinfos;
     }
@@ -98,18 +112,26 @@ public class ProductInfoDao {
      */
     public List<String> getCategory2ByCategory(String category) {
         List<String> category2s = new ArrayList<String>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
         try {
-            Connection connection = DBConn.getConn();
+//            Connection connection = DBConn.getConn();
+            connection = JDBCUtil.getConnection();
             String sql = "select distinct category2 from productinfo where category = ?";
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
+            statement = (PreparedStatement) connection.prepareStatement(sql);
             statement.setString(1, category);
-            ResultSet resultSet = statement.executeQuery();
+            resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 String category2 = resultSet.getString("category2");
                 category2s.add(category2);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            JDBCUtil.close(resultSet);
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
         }
         return category2s;
     }
@@ -121,17 +143,25 @@ public class ProductInfoDao {
      */
     public List<String> getCategory() {
         List<String> categorys = new ArrayList<String>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
         try {
-            Connection connection = DBConn.getConn();
+//            Connection connection = DBConn.getConn();
+            connection = JDBCUtil.getConnection();
             String sql = "select distinct category from productinfo";
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
-            ResultSet resultSet = statement.executeQuery();
+            statement = (PreparedStatement) connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 String category = resultSet.getString("category");
                 categorys.add(category);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            JDBCUtil.close(resultSet);
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
         }
         return categorys;
     }
@@ -146,10 +176,13 @@ public class ProductInfoDao {
      */
     public boolean update(int amount, int sellCount, String id) {
         boolean result = false;
+        Connection connection = null;
+        PreparedStatement statement = null;
         try {
-            Connection connection = DBConn.getConn();
+//            Connection connection = DBConn.getConn();
+            connection = JDBCUtil.getConnection();
             String sql = "update productinfo set amount = ?, sellCount = ? where id = ?";
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
+            statement = (PreparedStatement) connection.prepareStatement(sql);
             statement.setInt(1, amount);
             statement.setInt(2, sellCount);
             statement.setString(3, id);
@@ -159,6 +192,9 @@ public class ProductInfoDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
         }
         return result;
     }

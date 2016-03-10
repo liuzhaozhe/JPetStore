@@ -16,7 +16,7 @@ public class ProductInfoDaoTest {
     @Test
     public void testSave() throws Exception {
         Productinfo productinfo = new Productinfo();
-        productinfo.setId("jjk123456");
+        productinfo.setId("j5k16456");
         productinfo.setName("小猫");
         productinfo.setDescription("童叟无欺");
         productinfo.setPrice(new BigDecimal("10.6"));
@@ -27,10 +27,10 @@ public class ProductInfoDaoTest {
         productinfo.setCategory("猫");
 
         System.out.println(ProductInfoDao.getInstance().save(productinfo));
-        productinfo.setId("jk12345");
+        productinfo.setId("jk1565");
         productinfo.setCategory2("白猫");
         System.out.println(ProductInfoDao.getInstance().save(productinfo));
-        productinfo.setId("kd12345");
+        productinfo.setId("kd15345");
         productinfo.setCategory("狗");
         System.out.println(ProductInfoDao.getInstance().save(productinfo));
 
