@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : MySQL
+Source Server         : localhost_3306
 Source Server Version : 50711
 Source Host           : localhost:3306
 Source Database       : petstore
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2016-03-06 21:33:36
+Date: 2016-03-10 16:59:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -122,7 +122,7 @@ CREATE TABLE `orderitem` (
   `orderId` int(10) unsigned DEFAULT NULL COMMENT '订单编号,绑定订单',
   `customerId` int(10) unsigned DEFAULT NULL COMMENT '用户ID,绑定用户购物车',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='订单条目';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单条目';
 
 -- ----------------------------
 -- Records of orderitem
@@ -148,3 +148,60 @@ CREATE TABLE `productinfo` (
 -- ----------------------------
 -- Records of productinfo
 -- ----------------------------
+INSERT INTO `productinfo` VALUES ('BD-FC-01', '雀-01', null, '16.50', '5', '1', 'BD-FC', 'BD-FC', 'BD');
+INSERT INTO `productinfo` VALUES ('BD-FC-02', '雀-02', null, '16.50', '5', '1', 'BD-FC', 'BD-FC', 'BD');
+INSERT INTO `productinfo` VALUES ('BD-FC-03', '雀-03', null, '16.50', '5', '1', 'BD-FC', 'BD-FC', 'BD');
+INSERT INTO `productinfo` VALUES ('BD-FC-04', '雀-04', null, '16.50', '5', '1', 'BD-FC', 'BD-FC', 'BD');
+INSERT INTO `productinfo` VALUES ('BD-PO-01', '鹦鹉-01', null, '99.90', '6', '3', 'BD-PO', 'BD-PO', 'BD');
+INSERT INTO `productinfo` VALUES ('BD-PO-02', '鹦鹉-02', null, '99.90', '6', '3', 'BD-PO', 'BD-PO', 'BD');
+INSERT INTO `productinfo` VALUES ('BD-PO-03', '鹦鹉-03', null, '99.90', '6', '3', 'BD-PO', 'BD-PO', 'BD');
+INSERT INTO `productinfo` VALUES ('CA-MX-01', '曼岛猫-01', null, '169.50', '8', '4', 'CA-MX', 'CA-MX', 'CA');
+INSERT INTO `productinfo` VALUES ('CA-MX-02', '曼岛猫-02', null, '169.50', '8', '4', 'CA-MX', 'CA-MX', 'CA');
+INSERT INTO `productinfo` VALUES ('CA-MX-03', '曼岛猫-03', null, '169.50', '8', '4', 'CA-MX', 'CA-MX', 'CA');
+INSERT INTO `productinfo` VALUES ('CA-MX-04', '曼岛猫-04', null, '169.50', '8', '4', 'CA-MX', 'CA-MX', 'CA');
+INSERT INTO `productinfo` VALUES ('CA-PS-01', '波斯猫-01', null, '195.00', '10', '5', 'CA-PS', 'CA-PS', 'CA');
+INSERT INTO `productinfo` VALUES ('CA-PS-02', '波斯猫-02', null, '195.00', '10', '5', 'CA-PS', 'CA-PS', 'CA');
+INSERT INTO `productinfo` VALUES ('CA-PS-03', '波斯猫-03', null, '195.00', '10', '5', 'CA-PS', 'CA-PS', 'CA');
+INSERT INTO `productinfo` VALUES ('CA-PS-04', '波斯猫-04', null, '195.00', '10', '5', 'CA-PS', 'CA-PS', 'CA');
+INSERT INTO `productinfo` VALUES ('CA-PS-05', '波斯猫-05', null, '195.00', '10', '5', 'CA-PS', 'CA-PS', 'CA');
+INSERT INTO `productinfo` VALUES ('DG-BG-01', '恶犬-01', null, '200.50', '6', '1', 'DG-BG', 'DG-BG', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-BG-02', '恶犬-02', null, '200.50', '6', '1', 'DG-BG', 'DG-BG', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-BG-03', '恶犬-03', null, '200.50', '6', '1', 'DG-BG', 'DG-BG', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-BG-04', '恶犬-04', null, '200.50', '6', '1', 'DG-BG', 'DG-BG', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-DM-01', '达尔马西亚狗-01', null, '600.00', '8', '5', 'DG-DM', 'DG-DM', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-DM-02', '达尔马西亚狗-02', null, '600.00', '8', '5', 'DG-DM', 'DG-DM', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-DM-03', '达尔马西亚狗-03', null, '600.00', '8', '5', 'DG-DM', 'DG-DM', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-GR-01', '金毛猎犬-01', null, '620.00', '12', '8', 'DG-GR', 'DG-GR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-GR-02', '金毛猎犬-02', null, '620.00', '12', '8', 'DG-GR', 'DG-GR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-GR-03', '金毛猎犬-03', null, '620.00', '12', '8', 'DG-GR', 'DG-GR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-GR-04', '金毛猎犬-04', null, '620.00', '12', '8', 'DG-GR', 'DG-GR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-HH-01', '吉娃娃-01', null, '450.00', '12', '7', 'DG-HH', 'DG-HH', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-HH-02', '吉娃娃-02', null, '450.00', '12', '7', 'DG-HH', 'DG-HH', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-HH-03', '吉娃娃-03', null, '450.00', '12', '7', 'DG-HH', 'DG-HH', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-HH-04', '吉娃娃-04', null, '450.00', '12', '7', 'DG-HH', 'DG-HH', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-HH-05', '吉娃娃-05', null, '450.00', '12', '7', 'DG-HH', 'DG-HH', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-LR-01', '拉布拉多寻回犬-01', null, '500.00', '10', '5', 'DG-LR', 'DG-LR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-LR-02', '拉布拉多寻回犬-02', null, '500.00', '10', '5', 'DG-LR', 'DG-LR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-LR-03', '拉布拉多寻回犬-03', null, '500.00', '10', '5', 'DG-LR', 'DG-LR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-LR-04', '拉布拉多寻回犬-04', null, '500.00', '10', '5', 'DG-LR', 'DG-LR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-LR-05', '拉布拉多寻回犬-05', null, '500.00', '10', '5', 'DG-LR', 'DG-LR', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-PD-01', '狮子狗-01', null, '230.00', '6', '2', 'DG-PD', 'DG-PD', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-PD-02', '狮子狗-02', null, '230.00', '6', '2', 'DG-PD', 'DG-PD', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-PD-03', '狮子狗-03', null, '230.00', '6', '2', 'DG-PD', 'DG-PD', 'DG');
+INSERT INTO `productinfo` VALUES ('DG-PD-04', '狮子狗-04', null, '230.00', '6', '2', 'DG-PD', 'DG-PD', 'DG');
+INSERT INTO `productinfo` VALUES ('FI-GF-01', '神仙鱼-01', null, '300.00', '15', '10', 'FI-GF', 'FI-GF', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-GF-02', '神仙鱼-02', null, '300.00', '15', '10', 'FI-GF', 'FI-GF', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-GF-03', '神仙鱼-03', null, '300.00', '15', '10', 'FI-GF', 'FI-GF', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-GF-04', '神仙鱼-04', null, '300.00', '15', '10', 'FI-GF', 'FI-GF', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-GF-05', '神仙鱼-05', null, '300.00', '15', '10', 'FI-GF', 'FI-GF', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-KI-01', '锦鲤-01', null, '999.00', '4', '0', 'FI-KI', 'FI-KI', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-KI-02', '锦鲤-02', null, '999.00', '4', '0', 'FI-KI', 'FI-KI', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-KI-03', '锦鲤-03', null, '999.00', '4', '0', 'FI-KI', 'FI-KI', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-KI-04', '锦鲤-04', null, '999.00', '4', '0', 'FI-KI', 'FI-KI', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-TS-01', '鼬鲨-01', null, '1500.00', '3', '1', 'FI-TS', 'FI-TS', 'FI');
+INSERT INTO `productinfo` VALUES ('FI-TS-02', '鼬鲨-02', null, '1500.00', '3', '1', 'FI-TS', 'FI-TS', 'FI');
+INSERT INTO `productinfo` VALUES ('RP-IG-01', '蜥蜴-01', null, '233.50', '4', '0', 'RP-IG', 'RP-IG', 'RP');
+INSERT INTO `productinfo` VALUES ('RP-IG-02', '蜥蜴-02', null, '233.50', '4', '0', 'RP-IG', 'RP-IG', 'RP');
+INSERT INTO `productinfo` VALUES ('RP-IG-03', '蜥蜴-03', null, '233.50', '4', '0', 'RP-IG', 'RP-IG', 'RP');
+INSERT INTO `productinfo` VALUES ('RP-IG-04', '蜥蜴-04', null, '233.50', '4', '0', 'RP-IG', 'RP-IG', 'RP');
+INSERT INTO `productinfo` VALUES ('RP-SN-01', '蛇-01', null, '199.00', '1', '1', 'RP-SN', 'RP-SN', 'RP');
