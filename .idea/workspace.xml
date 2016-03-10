@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a6e3a14-0a17-4d0e-8b94-4da90ef5453a" name="Default" comment="总测试">
+    <list default="true" id="5a6e3a14-0a17-4d0e-8b94-4da90ef5453a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JPetStore.iws" />
@@ -903,7 +903,7 @@
       <workItem from="1457493762209" duration="77000" />
       <workItem from="1457514475118" duration="169000" />
       <workItem from="1457576711263" duration="1688000" />
-      <workItem from="1457583677489" duration="7224000" />
+      <workItem from="1457583677489" duration="7241000" />
     </task>
     <task id="LOCAL-00001" summary="更改数据库，缩减为4个表，加入js文件夹，完成DAO并测试完毕">
       <created>1457274614951</created>
@@ -971,7 +971,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457599551695</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="同步">
+      <created>1457599594600</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1457599594600</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1007,7 +1013,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32966000" />
+    <option name="totallyTimeSpent" value="32983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1093,7 +1099,8 @@
     <MESSAGE value="更改OrderItem，测试成功" />
     <MESSAGE value="更改ProductInfo，测试成功" />
     <MESSAGE value="总测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="总测试" />
+    <MESSAGE value="同步" />
+    <option name="LAST_COMMIT_MESSAGE" value="同步" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
