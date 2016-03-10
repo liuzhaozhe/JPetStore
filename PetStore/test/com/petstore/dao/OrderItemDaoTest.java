@@ -1,13 +1,10 @@
 package com.petstore.dao;
 
-import com.petstore.db.DBConn;
 import com.petstore.entity.Orderitem;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by hezhujun on 2016/3/6.
@@ -25,14 +22,14 @@ public class OrderItemDaoTest {
         orderitem.setCustomerId(123);
         boolean result = OrderItemDao.getInstance().save(orderitem);
         System.out.println(result);
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 
     @Test
     public void testDeleteByCustomerId() throws Exception {
         boolean result = OrderItemDao.getInstance().deleteByCustomerId(123);
         System.out.println(result);
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 
     @Test
@@ -42,7 +39,7 @@ public class OrderItemDaoTest {
              ) {
             System.out.println(orderitem.toString());
         }
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 
     @Test
@@ -52,13 +49,13 @@ public class OrderItemDaoTest {
                 ) {
             System.out.println(orderitem.toString());
         }
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 
     @Test
     public void testUpdate() throws Exception {
-        boolean result = OrderItemDao.getInstance().update(20, 1);
+        boolean result = OrderItemDao.getInstance().update(20, 3);
         System.out.println(result);
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 }

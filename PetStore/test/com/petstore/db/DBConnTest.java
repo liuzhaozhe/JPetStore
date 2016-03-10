@@ -13,12 +13,12 @@ public class DBConnTest {
 
     @Test
     public void testGetConn() throws Exception {
-        Connection conn = DBConn.getConn();
+        Connection conn = JDBCUtil.getConnection();
         if(conn == null){
             System.out.println("数据库连接失败");
         } else {
             System.out.println("数据库连接成功");
         }
-        DBConn.closeConn();
+        JDBCUtil.close(conn);
     }
 }
