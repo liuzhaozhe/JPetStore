@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a6e3a14-0a17-4d0e-8b94-4da90ef5453a" name="Default" comment="添加c3p0连接池配置文件">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PetStore/src/c3p0-config.xml" />
+    <list default="true" id="5a6e3a14-0a17-4d0e-8b94-4da90ef5453a" name="Default" comment="添加c3p0连接池类获取数据库连接工具类">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JPetStore.iws" />
@@ -43,12 +43,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="c3p0-config.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PetStore/src/c3p0-config.xml">
+      <file leaf-file-name="jdbcUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35696203">
-              <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
-              <folding />
+            <state vertical-scroll-proportion="0.6028369">
+              <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,9 +60,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,6 +98,7 @@
         <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/ProductInfoDaoTest.java" />
         <option value="$PROJECT_DIR$/PetStore/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/PetStore/src/c3p0-config.xml" />
+        <option value="$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java" />
       </list>
     </option>
   </component>
@@ -986,7 +989,7 @@
       <workItem from="1457493762209" duration="77000" />
       <workItem from="1457514475118" duration="169000" />
       <workItem from="1457576711263" duration="1688000" />
-      <workItem from="1457583677489" duration="1891000" />
+      <workItem from="1457583677489" duration="2959000" />
     </task>
     <task id="LOCAL-00001" summary="更改数据库，缩减为4个表，加入js文件夹，完成DAO并测试完毕">
       <created>1457274614951</created>
@@ -1000,7 +1003,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457579521752</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加c3p0连接池配置文件">
+      <created>1457593811021</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1457593811021</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1036,7 +1045,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27633000" />
+    <option name="totallyTimeSpent" value="28701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1114,7 +1123,8 @@
     <MESSAGE value="更改数据库，缩减为4个表，加入js文件夹，完成DAO并测试完毕" />
     <MESSAGE value="添加c3p0连接池库" />
     <MESSAGE value="添加c3p0连接池配置文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加c3p0连接池配置文件" />
+    <MESSAGE value="添加c3p0连接池类获取数据库连接工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加c3p0连接池类获取数据库连接工具类" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1388,19 +1398,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/db/DBConn.java">
+    <entry file="file://$PROJECT_DIR$/PetStore/src/c3p0-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26511627">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3517018">
+          <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PetStore/src/c3p0-config.xml">
+    <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/db/DBConn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35696203">
-          <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.29457363">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6028369">
+          <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
