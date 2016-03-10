@@ -19,7 +19,7 @@ public class CustomerDaoTest {
     @Test
     public void testSave() throws Exception {
         Customer customer = new Customer();
-        customer.setUsername("俞志云");
+        customer.setUsername("1111");
         customer.setPassword("123");
         customer.setAddress("1");
         customer.setEmail("1214444@qq.com");
@@ -37,12 +37,12 @@ public class CustomerDaoTest {
         } else {
             System.out.println("Cannot find");
         }
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 
     @Test
     public void testUpdate() throws Exception {
-        Customer customer = CustomerDao.getInstance().findByName("俞志云");
+        Customer customer = CustomerDao.getInstance().findByName("1111");
         customer.setAddress("铁道1舍522");
         customer.setEmail("2723364262@qq.com");
         boolean result = CustomerDao.getInstance().update(customer);

@@ -12,7 +12,7 @@ import java.sql.Statement;
  * Created by hezhujun on 2016/3/10.
  * 使用c3p0连接池
  */
-public class jdbcUtil {
+public class JDBCUtil {
 
     private static ComboPooledDataSource dataSource = null;
 

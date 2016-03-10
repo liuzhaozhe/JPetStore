@@ -48,7 +48,7 @@
         <property name="idleConnectionTestPeriod">60</property>
 
         <!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
-        <property name="initialPoolSize">3</property>
+        <property name="initialPoolSize">10</property>
 
         <!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
         <property name="maxIdleTime">60</property>
@@ -78,7 +78,7 @@
 
         <!--定义所有连接测试都执行的测试语句。在使用连接测试的情况下这个一显著提高测试速度。注意：
         测试的表必须在初始数据源的时候就存在。Default: null-->
-        <property name="preferredTestQuery">select id from test where id=1</property>
+        <!--<property name="preferredTestQuery">select id from test where id=1</property>-->
 
         <!--用户修改系统配置参数执行前最多等待300秒。Default: 300 -->
         <property name="propertyCycle">300</property>
