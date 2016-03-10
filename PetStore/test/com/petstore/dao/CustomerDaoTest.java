@@ -26,7 +26,7 @@ public class CustomerDaoTest {
         customer.setPhone("12345678911");
         boolean result = CustomerDao.getInstance().save(customer);
         System.out.println(result);
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 
     @Test
@@ -47,7 +47,7 @@ public class CustomerDaoTest {
         customer.setEmail("2723364262@qq.com");
         boolean result = CustomerDao.getInstance().update(customer);
         System.out.println("result:" + result);
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 
 }

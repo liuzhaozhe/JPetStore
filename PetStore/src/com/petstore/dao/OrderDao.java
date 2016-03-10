@@ -2,6 +2,7 @@ package com.petstore.dao;
 
 import com.mysql.jdbc.PreparedStatement;
 import com.petstore.db.DBConn;
+import com.petstore.db.JDBCUtil;
 import com.petstore.entity.Order;
 
 import java.sql.Connection;
@@ -27,17 +28,21 @@ public class OrderDao {
 
     /**
      * 增
+     *
      * @param order
      * @return
      */
     public boolean save(Order order) {
         boolean result = false;
+        Connection connection = null;
+        PreparedStatement statement = null;
         try {
-            Connection connection = DBConn.getConn();                               // 获取数据库连接
+//            Connection connection = DBConn.getConn();                               // 获取数据库连接
+            connection = JDBCUtil.getConnection();
             // 插入数据sql语句
             String sql = "insert into `order`(`name`, consignee, address, phone, totalPrice," +
                     " createTime, paymentWay, customerId)values(?,?,?,?,?,?,?,?)";
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
+            statement = (PreparedStatement) connection.prepareStatement(sql);
             statement.setString(1, order.getName());                                // 设置参数
             statement.setString(2, order.getConsignee());
             statement.setString(3, order.getAddress());
@@ -52,6 +57,9 @@ public class OrderDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            JDBCUtil.close(statement);                                                  // 释放资源
+            JDBCUtil.close(connection);
         }
         return result;
     }
@@ -64,12 +72,15 @@ public class OrderDao {
      */
     public List<Order> findByCustomerId(int customerId) {
         List<Order> orders = new ArrayList<Order>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
         try {
-            Connection connection = DBConn.getConn();
+            connection = DBConn.getConn();
             String sql = "select * from `order` where customerId = ?";
-            PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
+            statement = (PreparedStatement) connection.prepareStatement(sql);
             statement.setInt(1, customerId);
-            ResultSet resultSet = statement.executeQuery();
+            resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Order order = new Order();
                 order.setId(resultSet.getInt("id"));
@@ -85,6 +96,10 @@ public class OrderDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            JDBCUtil.close(resultSet);                                  // 释放资源
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
         }
         return orders;
     }

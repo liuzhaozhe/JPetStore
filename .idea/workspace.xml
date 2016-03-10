@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5a6e3a14-0a17-4d0e-8b94-4da90ef5453a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java" afterPath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java" afterPath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java" afterPath="$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java" />
     </list>
     <ignored path="JPetStore.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,26 +47,22 @@
       <file leaf-file-name="OrderDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2635659">
-              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.9705426">
+              <caret line="99" column="79" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
               <folding>
-                <marker date="1457596136624" expanded="true" signature="860:1010" placeholder="insert into `order`... " />
-                <marker date="1457596136624" expanded="true" signature="2237:2279" placeholder="select * fro... order" />
+                <marker date="1457597460639" expanded="true" signature="1035:1185" placeholder="insert into `order`... " />
+                <marker date="1457597460639" expanded="true" signature="2657:2699" placeholder="select * fro... order" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java">
+      <file leaf-file-name="CustomerDaoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
-              <folding>
-                <marker date="1457596089659" expanded="true" signature="980:1060" placeholder="insert into customer... " />
-                <marker date="1457596089659" expanded="true" signature="2453:2494" placeholder="select * fro... customer" />
-                <marker date="1457596089659" expanded="true" signature="3936:4046" placeholder="update custo... " />
-              </folding>
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,9 +107,9 @@
         <option value="$PROJECT_DIR$/PetStore/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java" />
         <option value="$PROJECT_DIR$/PetStore/test/com/petstore/db/DBConnTest.java" />
-        <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java" />
         <option value="$PROJECT_DIR$/PetStore/src/c3p0-config.xml" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java" />
+        <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java" />
       </list>
     </option>
@@ -1027,7 +1023,7 @@
       <workItem from="1457493762209" duration="77000" />
       <workItem from="1457514475118" duration="169000" />
       <workItem from="1457576711263" duration="1688000" />
-      <workItem from="1457583677489" duration="4218000" />
+      <workItem from="1457583677489" duration="5137000" />
     </task>
     <task id="LOCAL-00001" summary="更改数据库，缩减为4个表，加入js文件夹，完成DAO并测试完毕">
       <created>1457274614951</created>
@@ -1059,7 +1055,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457595957510</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改一些细节">
+      <created>1457596180892</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1457596180892</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1095,7 +1097,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29960000" />
+    <option name="totallyTimeSpent" value="30879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1175,7 +1177,8 @@
     <MESSAGE value="添加c3p0连接池配置文件" />
     <MESSAGE value="添加c3p0连接池类获取数据库连接工具类" />
     <MESSAGE value="更改连接池配置，更改customerDao并测试完毕" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改连接池配置，更改customerDao并测试完毕" />
+    <MESSAGE value="修改一些细节" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改一些细节" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1455,18 +1458,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30237582">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
+        <state vertical-scroll-proportion="-2.711628">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
           <folding>
             <marker date="1457596089659" expanded="true" signature="980:1060" placeholder="insert into customer... " />
             <marker date="1457596089659" expanded="true" signature="2453:2494" placeholder="select * fro... customer" />
@@ -1475,13 +1470,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2635659">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.9705426">
+          <caret line="99" column="79" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
           <folding>
-            <marker date="1457596136624" expanded="true" signature="860:1010" placeholder="insert into `order`... " />
-            <marker date="1457596136624" expanded="true" signature="2237:2279" placeholder="select * fro... order" />
+            <marker date="1457597460639" expanded="true" signature="1035:1185" placeholder="insert into `order`... " />
+            <marker date="1457597460639" expanded="true" signature="2657:2699" placeholder="select * fro... order" />
           </folding>
         </state>
       </provider>
