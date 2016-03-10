@@ -1,11 +1,11 @@
 package com.petstore.dao;
 
-import com.mysql.jdbc.PreparedStatement;
 import com.petstore.db.DBConn;
 import com.petstore.db.JDBCUtil;
 import com.petstore.entity.Order;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;

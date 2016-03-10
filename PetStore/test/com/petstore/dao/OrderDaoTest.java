@@ -21,7 +21,7 @@ public class OrderDaoTest {
 
         Order order = new Order();
         order.setName("fe125364");
-        order.setConsignee("俞志云");
+        order.setConsignee("225");
         order.setAddress("铁道522");
         order.setPhone("12345678911");
         order.setTotalPrice(new BigDecimal("10.3"));
@@ -33,7 +33,7 @@ public class OrderDaoTest {
 
         order.setConsignee("何柱君");
         System.out.println(orderDao.save(order));
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 
     @Test
@@ -44,6 +44,6 @@ public class OrderDaoTest {
                 ) {
             System.out.println(order.toString());
         }
-        DBConn.closeConn();
+//        DBConn.closeConn();
     }
 }
