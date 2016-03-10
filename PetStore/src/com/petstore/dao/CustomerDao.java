@@ -1,6 +1,5 @@
 package com.petstore.dao;
 
-import com.petstore.db.DBConn;
 import com.petstore.db.JDBCUtil;
 import com.petstore.entity.Customer;
 

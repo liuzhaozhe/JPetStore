@@ -1,6 +1,5 @@
 package com.petstore.dao;
 
-import com.petstore.db.DBConn;
 import com.petstore.db.JDBCUtil;
 import com.petstore.entity.Orderitem;
 
@@ -186,7 +185,8 @@ public class OrderItemDao {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = DBConn.getConn();                                       // 获取数据库连接
+//            connection = DBConn.getConn();                                       // 获取数据库连接
+            connection = JDBCUtil.getConnection();
             String sql = "update orderitem set amount = ? where id = ?";                // sql语句
             statement = (PreparedStatement) connection.prepareStatement(sql);
             statement.setInt(1, amount);                                                    // 加入参数

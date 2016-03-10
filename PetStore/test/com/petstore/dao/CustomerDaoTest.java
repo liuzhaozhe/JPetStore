@@ -1,10 +1,7 @@
 package com.petstore.dao;
 
-import com.petstore.db.DBConn;
 import com.petstore.entity.Customer;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by hezhujun on 2016/3/3.

@@ -1,6 +1,5 @@
 package com.petstore.dao;
 
-import com.petstore.db.DBConn;
 import com.petstore.db.JDBCUtil;
 import com.petstore.entity.Order;
 
@@ -76,7 +75,8 @@ public class OrderDao {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            connection = DBConn.getConn();
+//            connection = DBConn.getConn();
+            connection = JDBCUtil.getConnection();
             String sql = "select * from `order` where customerId = ?";
             statement = (PreparedStatement) connection.prepareStatement(sql);
             statement.setInt(1, customerId);

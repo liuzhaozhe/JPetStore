@@ -1,13 +1,10 @@
 package com.petstore.dao;
 
-import com.petstore.db.DBConn;
 import com.petstore.entity.Orderitem;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by hezhujun on 2016/3/6.
@@ -57,7 +54,7 @@ public class OrderItemDaoTest {
 
     @Test
     public void testUpdate() throws Exception {
-        boolean result = OrderItemDao.getInstance().update(20, 1);
+        boolean result = OrderItemDao.getInstance().update(20, 3);
         System.out.println(result);
 //        DBConn.closeConn();
     }

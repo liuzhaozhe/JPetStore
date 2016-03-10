@@ -1,14 +1,11 @@
 package com.petstore.dao;
 
-import com.petstore.db.DBConn;
 import com.petstore.entity.Order;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by hezhujun on 2016/3/6.
