@@ -1,0 +1,116 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: darkgray;
+}
+
+#header {
+    margin: 0px auto;
+    padding: 0px;
+    width: 90%;
+    height: 80px;
+    background-color: darkolivegreen;
+}
+
+#logo {
+    width: 30%;
+    height: 80px;
+    float: left;
+}
+
+#header_main {
+    width: 40%;
+    height: 80px;
+    float: left;
+}
+
+#header_search {
+    width: 30%;
+    height: 80px;
+    float: left;
+}
+
+#body {
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    background-color: green;
+}
+
+#foot {
+    width: 90%;
+    height: 50px;
+    margin: 0px auto;
+    background-color: darkolivegreen;
+}
+
+#logo_image {
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
+
+#account {
+    margin: 30px auto;
+    width: 80px;
+    height: auto;
+}
+
+a.account:link, a.account:hover, a.account:active, a.account:visited {
+    color: orange;
+    text-decoration: blink;
+}
+
+#search {
+    margin: 30px auto;
+    width: 210px;
+    height: auto;
+}
+
+#foot_main {
+    padding: 5px;
+}
+
+a.outlink:link, a.outlink:hover, a.outlink:active, a.outlink:visited {
+    color: blue;
+    text-decoration: blink;
+}
+
+#quicklinks {
+    width: 90%;
+    height: 30px;
+    margin: 0px auto;
+    background-color: green;
+}
+
+#link {
+    height: 100%;
+    padding: 3px;
+    text-align: center;
+}
+
+#body_main {
+    width: 100%;
+    padding: 5px;
+    margin: 0px 10px;
+}
+
+#bigImage {
+    width: 500px;
+    height: 500px;
+    margin: 0px 50px;
+    background-color: rebeccapurple;
+    float: left;
+}
+
+#bar {
+    width: 30%;
+    height: auto;
+    margin: 0px 20px;
+    float: left;
+}
+
+.Image{}
+.Image ol{position:relative;width: 80px;height: 20px;top:-30px;left:60px;}
+.Image ol li{float:left;width: 10px;height: 10px;margin: 5px;background: #fff;}
+.Image ol li.seleted{background: #1AA4CA;}
