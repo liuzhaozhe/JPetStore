@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
     margin: 0px;
     padding: 0px;
@@ -35,6 +37,7 @@ body {
     height: auto;
     margin: 0px auto;
     background-color: green;
+    overflow: hidden;
 }
 
 #foot {
@@ -52,7 +55,7 @@ body {
 
 #account {
     margin: 30px auto;
-    width: 80px;
+    width: 100px;
     height: auto;
 }
 
@@ -63,7 +66,7 @@ a.account:link, a.account:hover, a.account:active, a.account:visited {
 
 #search {
     margin: 30px auto;
-    width: 210px;
+    width: 230px;
     height: auto;
 }
 
@@ -71,8 +74,13 @@ a.account:link, a.account:hover, a.account:active, a.account:visited {
     padding: 5px;
 }
 
-a.outlink:link, a.outlink:hover, a.outlink:active, a.outlink:visited {
+a.outlink:link, a.outlink:visited {
     color: blue;
+    text-decoration: blink;
+}
+
+a.outlink:hover, a.outlink:active {
+    color: red;
     text-decoration: blink;
 }
 
@@ -89,28 +97,45 @@ a.outlink:link, a.outlink:hover, a.outlink:active, a.outlink:visited {
     text-align: center;
 }
 
+/*页面的主要内容 页面添加高度*/
 #body_main {
-    width: 100%;
-    padding: 5px;
-    margin: 0px 10px;
+    width: 80%;
+    margin: 5px auto;
+    height: auto;
+    overflow: hidden;
 }
 
-#bigImage {
-    width: 500px;
+.bigImage {
+    width: 70%;
     height: 500px;
-    margin: 0px 50px;
-    background-color: rebeccapurple;
     float: left;
+    overflow: hidden;
 }
 
-#bar {
+.bigImage img {
+    width: 600px;
+    height: 400px;
+    margin: 100px auto;
+}
+
+.bar {
+    font-family: 宋体;
+    font-size: 15px;
     width: 30%;
     height: auto;
-    margin: 0px 20px;
     float: left;
 }
 
-.Image{}
-.Image ol{position:relative;width: 80px;height: 20px;top:-30px;left:60px;}
-.Image ol li{float:left;width: 10px;height: 10px;margin: 5px;background: #fff;}
-.Image ol li.seleted{background: #1AA4CA;}
+.bar a {
+    font-size: 20px;
+}
+
+/*普通链接*/
+a.common:link, a.common:visited {
+    color: black;
+    text-decoration: blink;
+}
+a.common:hover, a.common:active {
+    color: red;
+    text-decoration: blink;
+}
