@@ -109,7 +109,8 @@ public class CustomerDao {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = DBConn.getConn();                           // 获取数据库连接
+//            connection = DBConn.getConn();                           // 获取数据库连接
+            connection = JDBCUtil.getConnection();
             // 更新数据的sql语句
             String sql = "update customer set password = ?," +
                     "address = ?, email = ?, phone = ? where username = ?";

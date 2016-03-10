@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a6e3a14-0a17-4d0e-8b94-4da90ef5453a" name="Default" comment="更改连接池配置，更改customerDao并测试完毕">
+    <list default="true" id="5a6e3a14-0a17-4d0e-8b94-4da90ef5453a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/src/c3p0-config.xml" afterPath="$PROJECT_DIR$/PetStore/src/c3p0-config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java" afterPath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java" afterPath="$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java" afterPath="$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/test/com/petstore/db/DBConnTest.java" afterPath="$PROJECT_DIR$/PetStore/test/com/petstore/db/DBConnTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java" afterPath="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java" />
     </list>
     <ignored path="JPetStore.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +43,35 @@
     <favorites_list name="JPetStore" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="OrderDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2635659">
+              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+              <folding>
+                <marker date="1457596136624" expanded="true" signature="860:1010" placeholder="insert into `order`... " />
+                <marker date="1457596136624" expanded="true" signature="2237:2279" placeholder="select * fro... order" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
+              <folding>
+                <marker date="1457596089659" expanded="true" signature="980:1060" placeholder="insert into customer... " />
+                <marker date="1457596089659" expanded="true" signature="2453:2494" placeholder="select * fro... customer" />
+                <marker date="1457596089659" expanded="true" signature="3936:4046" placeholder="update custo... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,7 +100,6 @@
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/entity/Customer.java" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/entity/Order.java" />
         <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/OrderDaoTest.java" />
-        <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/entity/Orderitem.java" />
         <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/OrderItemDaoTest.java" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderItemDao.java" />
@@ -87,9 +111,10 @@
         <option value="$PROJECT_DIR$/PetStore/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/PetStore/src/com/petstore/db/jdbcUtil.java" />
         <option value="$PROJECT_DIR$/PetStore/test/com/petstore/db/DBConnTest.java" />
-        <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java" />
         <option value="$PROJECT_DIR$/PetStore/test/com/petstore/dao/CustomerDaoTest.java" />
         <option value="$PROJECT_DIR$/PetStore/src/c3p0-config.xml" />
+        <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java" />
+        <option value="$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java" />
       </list>
     </option>
   </component>
@@ -1002,7 +1027,7 @@
       <workItem from="1457493762209" duration="77000" />
       <workItem from="1457514475118" duration="169000" />
       <workItem from="1457576711263" duration="1688000" />
-      <workItem from="1457583677489" duration="4013000" />
+      <workItem from="1457583677489" duration="4218000" />
     </task>
     <task id="LOCAL-00001" summary="更改数据库，缩减为4个表，加入js文件夹，完成DAO并测试完毕">
       <created>1457274614951</created>
@@ -1028,7 +1053,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457594889589</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="更改连接池配置，更改customerDao并测试完毕">
+      <created>1457595957510</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1457595957510</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1064,15 +1095,15 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29755000" />
+    <option name="totallyTimeSpent" value="29960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27744806" sideWeight="0.5029542" order="7" side_tool="true" content_ui="tabs" />
@@ -1291,13 +1322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15367483">
-          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/entity/Orderitem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2806236">
@@ -1441,12 +1465,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/CustomerDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.082073435">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
           <folding>
-            <marker date="1457595701938" expanded="true" signature="980:1060" placeholder="insert into customer... " />
-            <marker date="1457595701938" expanded="true" signature="2453:2494" placeholder="select * fro... customer" />
-            <marker date="1457595701938" expanded="true" signature="3883:3993" placeholder="update custo... " />
+            <marker date="1457596089659" expanded="true" signature="980:1060" placeholder="insert into customer... " />
+            <marker date="1457596089659" expanded="true" signature="2453:2494" placeholder="select * fro... customer" />
+            <marker date="1457596089659" expanded="true" signature="3936:4046" placeholder="update custo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PetStore/src/com/petstore/dao/OrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2635659">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding>
+            <marker date="1457596136624" expanded="true" signature="860:1010" placeholder="insert into `order`... " />
+            <marker date="1457596136624" expanded="true" signature="2237:2279" placeholder="select * fro... order" />
           </folding>
         </state>
       </provider>

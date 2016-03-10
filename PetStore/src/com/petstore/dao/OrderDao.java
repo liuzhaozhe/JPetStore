@@ -25,6 +25,11 @@ public class OrderDao {
         return instance;
     }
 
+    /**
+     * 增
+     * @param order
+     * @return
+     */
     public boolean save(Order order) {
         boolean result = false;
         try {
