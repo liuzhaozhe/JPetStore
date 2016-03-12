@@ -46,24 +46,6 @@ public class ProductInfoDaoTest {
     }
 
     @Test
-    public void testGetCategory2ByCategory() throws Exception {
-        List<String> category2s = ProductInfoDao.getInstance().getCategory2ByCategory("猫");
-        for (String category2 : category2s
-             ) {
-            System.out.println(category2);
-        }
-    }
-
-    @Test
-    public void testGetCategory() throws Exception {
-        List<String> categorys = ProductInfoDao.getInstance().getCategory();
-        for (String category : categorys
-             ) {
-            System.out.println(category);
-        }
-    }
-
-    @Test
     public void testUpdate() throws Exception {
         boolean result = ProductInfoDao.getInstance().update(99, 1, "jk12345");
         System.out.println(result);

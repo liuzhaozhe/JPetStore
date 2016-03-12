@@ -20,7 +20,9 @@
     </div>
     <div id="header_main">
         <div id="account">
-            <a class="account" href="#"><img src="image/cart.gif" alt="购物车"/></a>
+            <a class="account" href="#">
+                <img src="image/cart.gif" alt="购物车"/>
+            </a>
             <img src="image/separator.gif"/>
             <a class="account" href="#">登陆</a>
             <img src="image/separator.gif"/>
@@ -50,12 +52,28 @@
     </div>
 </div>
 <div id="body">
-    <div>
-        <nav class="navigation">
-            <a href="#">sds</a>
-            >>
-            <a href="#">sds</a>
-        </nav>
+    <div id="body_main">
+        <table class="orderItem" align="center">
+            <tr>
+                <th width="10%">编号</th>
+                <th width="10%">收货人</th>
+                <th width="20%">地址</th>
+                <th width="10%">电话号码</th>
+                <th width="10%">总价格</th>
+                <th width="15%">创建时间</th>
+                <th width="10%">支付方式</th>
+                <th width="5%">操作</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
     </div>
 </div>
 <div id="foot">

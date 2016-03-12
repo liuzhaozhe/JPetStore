@@ -20,7 +20,9 @@
     </div>
     <div id="header_main">
         <div id="account">
-            <a class="account" href="#"><img src="image/cart.gif" alt="购物车"/></a>
+            <a class="account" href="#">
+                <img src="image/cart.gif" alt="购物车"/>
+            </a>
             <img src="image/separator.gif"/>
             <a class="account" href="#">登陆</a>
             <img src="image/separator.gif"/>
@@ -50,12 +52,27 @@
     </div>
 </div>
 <div id="body">
-    <div>
-        <nav class="navigation">
-            <a href="#">sds</a>
-            >>
-            <a href="#">sds</a>
-        </nav>
+    <div id="body_main" style="height: 500px">
+        <div class="bigImage">
+            <img src="image/login.png" alt="登陆图片" style="margin-top: 50px"/>
+        </div>
+        <div class="login-panel">
+            <div class="login">
+                <h1>欢迎来到宠物商店</h1>
+                <form action="" method="post">
+                    <span id="msg"></span>
+                    <br/>
+                    <input type="text" name="usernaem" placeholder="账号名" />
+                    <br/>
+                    <span id="checkUsername"></span>
+                    <br/>
+                    <input type="password" name="password" placeholder="密码" />
+                    <br/>
+                    <input class="button" type="submit" value="登陆">
+                </form>
+                <a href="#">注册新用户</a>
+            </div>
+        </div>
     </div>
 </div>
 <div id="foot">

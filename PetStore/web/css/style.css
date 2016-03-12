@@ -97,6 +97,16 @@ a.outlink:hover, a.outlink:active {
     text-align: center;
 }
 
+.navigation {
+    width: 80%;
+    color: black;
+    margin: 5px auto;
+}
+.navigation a:link, a:visited {
+    color: black;
+    text-decoration: blink;
+}
+
 /*页面的主要内容 页面添加高度*/
 #body_main {
     width: 80%;
@@ -138,4 +148,104 @@ a.common:link, a.common:visited {
 a.common:hover, a.common:active {
     color: red;
     text-decoration: blink;
+}
+
+.login-panel {
+    background: #ffffff;
+    box-shadow: 0 0 2px rgba(0,0,0,.13),0 1px 5px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.69);
+    height: 336px;
+    width: 30%;
+    float: left;
+    margin: 80px 0px;
+}
+
+.login {
+    margin-left: 30px;
+}
+.login h1 {
+    color: aqua;
+    font-size: 30px;
+}
+span {
+    font-size: 18px;
+    color: red;
+}
+.login input {
+    height: 30px;
+    width: 200px;
+    margin: 10px 0px;
+}
+.login a{
+    color: gray;
+}
+
+.sign-panel {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.button {
+    height: 30px;
+    width: 200px;
+    margin: 10px 0px;
+    background-color: aquamarine;
+    color: white;
+}
+.button:hover {
+    background-color: aqua;
+}
+
+.sign input {
+    height: 30px;
+    width: 200px;
+    margin: 10px 0px;
+}
+
+.show {
+    border: 2px salmon;
+    margin: 5px;
+    float: left;
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+.show a {
+    text-decoration: blink;
+    color: black;
+}
+.show img {
+    height: 200px;
+    width: 150px;
+    padding: 5px;
+}
+
+.introduction {
+    float: left;
+}
+.introduction ul{
+    list-style: none;
+    font-size: 30px;
+}
+.introduction a:link, a:visited{
+    background-color: gainsboro;
+    text-decoration: none;
+    padding: 3px;
+}
+.introduction a:hover, a:active {
+    background-color: yellow;
+    text-decoration: none;
+    padding: 3px;
+}
+.orderItem {
+    margin: 5px;
+}
+.orderItem th {
+    background-color: chocolate;
+}
+.orderItem tr:nth-child(odd){
+    background-color: aquamarine;
+}
+.orderItem tr:nth-child(even){
+    background-color: darkcyan;
 }
