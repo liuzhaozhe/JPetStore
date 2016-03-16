@@ -55,7 +55,7 @@ body {
 
 #account {
     margin: 30px auto;
-    width: 100px;
+    width: 150px;
     height: auto;
 }
 
@@ -167,8 +167,10 @@ a.common:hover, a.common:active {
     font-size: 30px;
 }
 span {
-    font-size: 18px;
+    font-size: 10px;
     color: red;
+    margin: 0px;
+    padding: 0px;
 }
 .login input {
     height: 30px;
