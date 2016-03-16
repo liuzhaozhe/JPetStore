@@ -7,16 +7,16 @@
         <div class="login-panel">
             <div class="login">
                 <h1>欢迎来到宠物商店</h1>
-                <form action="loginServlet" method="post" onsubmit="return checkForm(this)">
+                <form action="loginServlet" method="post">
                     <c:if test="${requestScope.msg != null}">
                         <span id="msg">${requestScope.msg}</span>
                         <br/>
                     </c:if>
-                    <input type="text" name="username" placeholder="账号名" onblur="check_user()" id="username"/>
+                    <input type="text" name="username" placeholder="账号" onblur="check_user()" id="username" required="required"/>
                     <br/>
                     <span id="checkUsername"></span>
                     <br/>
-                    <input type="password" name="password" placeholder="密码" />
+                    <input type="password" name="password" placeholder="密码" required="required"/>
                     <br/>
                     <input class="button" type="submit" value="登陆">
                 </form>
@@ -30,7 +30,7 @@
             if(username != ""){
                 $.post("checkUsernameServlet",
                         {
-                            name:username
+                            username:username
                         },
                         function(data,status){
                             if(status == "success"){
@@ -40,18 +40,6 @@
                                 $("#checkUsername").text("该用户不存在");
                             }
                         });
-            }
-        }
-        function checkForm(form){
-            with (form) {
-                if (username.value == "") {
-                    alert("请输入用户名");
-                    return false;
-                }
-                if (password.value == "") {
-                    alert("请输入密码");
-                    return false;
-                }
             }
         }
     </script>

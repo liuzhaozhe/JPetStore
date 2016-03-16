@@ -39,10 +39,21 @@
     </div>
     <div id="header_search">
         <div id="search">
-            <form action="" method="post">
+            <form action="" method="post" onsubmit="return check(this)">
                 <input type="text" name="search"/>
                 <input type="submit" value="查询"/>
             </form>
+            <script type="text/javascript">
+                function check(form) {
+                    with (form){
+                        if(search.value == ""){
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    }
+                }
+            </script>
         </div>
     </div>
 </div>
