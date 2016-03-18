@@ -105,68 +105,6 @@ public class ProductInfoDao {
     }
 
     /**
-     * 获取二级类别名称
-     *
-     * @param category
-     * @return
-     */
-    public List<String> getCategory2ByCategory(String category) {
-        List<String> category2s = new ArrayList<String>();
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        try {
-//            Connection connection = DBConn.getConn();
-            connection = JDBCUtil.getConnection();
-            String sql = "select distinct category2 from productinfo where category = ?";
-            statement = (PreparedStatement) connection.prepareStatement(sql);
-            statement.setString(1, category);
-            resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                String category2 = resultSet.getString("category2");
-                category2s.add(category2);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JDBCUtil.close(resultSet);
-            JDBCUtil.close(statement);
-            JDBCUtil.close(connection);
-        }
-        return category2s;
-    }
-
-    /**
-     * 获取总类别
-     *
-     * @return
-     */
-    public List<String> getCategory() {
-        List<String> categorys = new ArrayList<String>();
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        try {
-//            Connection connection = DBConn.getConn();
-            connection = JDBCUtil.getConnection();
-            String sql = "select distinct category from productinfo";
-            statement = (PreparedStatement) connection.prepareStatement(sql);
-            resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                String category = resultSet.getString("category");
-                categorys.add(category);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JDBCUtil.close(resultSet);
-            JDBCUtil.close(statement);
-            JDBCUtil.close(connection);
-        }
-        return categorys;
-    }
-
-    /**
      * 更新商品的库存
      *
      * @param amount
