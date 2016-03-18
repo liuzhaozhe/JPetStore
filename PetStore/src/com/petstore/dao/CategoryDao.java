@@ -1,14 +1,13 @@
 package com.petstore.dao;
 
 import com.petstore.db.JDBCUtil;
+import com.petstore.entity.Category;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,32 +24,24 @@ public class CategoryDao {
         return instance;
     }
 
-    private Map<String, String> category = null;
-    private Map<String, String> category2 = null;
-
-    CategoryDao(){
-        category = getCategory();
-        category2 = getCategory2();
-    }
-
     /**
-     * 获取二级类别名称
-     *
+     * 获取所有二级类别
+     * @param id
      * @return
      */
-    public Map<String, String> getCategory2() {
-        Map<String, String> category2s = new HashMap<String, String>();
+    public Map<String, String> getCategory2(String id) {
+        Map<String, String> categoryList = new HashMap<String, String>();
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-//            Connection connection = DBConn.getConn();
             connection = JDBCUtil.getConnection();
-            String sql = "select distinct from category2";
-            statement = (PreparedStatement) connection.prepareStatement(sql);
+            String sql = "SELECT categoryId, categoryName FROM category WHERE fatherId = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, id);
             resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                category2s.put(resultSet.getString(1), resultSet.getString(2));
+            while (resultSet.next()){
+                categoryList.put(resultSet.getString(1), resultSet.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -59,27 +50,31 @@ public class CategoryDao {
             JDBCUtil.close(statement);
             JDBCUtil.close(connection);
         }
-        return category2s;
+        return categoryList;
     }
 
     /**
-     * 获取总类别
-     *
+     * 获取一个类别所有信息
+     * @param id
      * @return
      */
-    public Map<String, String> getCategory() {
-        Map<String, String> categorys = new HashMap<String, String>();
+    public Category getCategory(String id) {
+        Category category = null;
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-//            Connection connection = DBConn.getConn();
             connection = JDBCUtil.getConnection();
-            String sql = "select distinct from category1";
-            statement = (PreparedStatement) connection.prepareStatement(sql);
+            String sql = "SELECT * FROM category WHERE categoryId = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, id);
             resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                categorys.put(resultSet.getString(1), resultSet.getString(2));
+            if (resultSet.next()){
+                category = new Category();
+                category.setCategoryId(resultSet.getString(1));
+                category.setCategoryName(resultSet.getString(2));
+                category.setFatherId(resultSet.getString(3));
+                category.setFatherName(resultSet.getString(4));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -88,25 +83,6 @@ public class CategoryDao {
             JDBCUtil.close(statement);
             JDBCUtil.close(connection);
         }
-        return categorys;
+        return category;
     }
-
-    /**
-     * 获取指定id的类别名字
-     * @param id
-     * @return
-     */
-    public String getCategoryNameByID(String id) {
-        return category.get(id);
-    }
-
-    /**
-     * 获取指定id的二级类别名字
-     * @param id
-     * @return
-     */
-    public String getCategory2ByID(String id) {
-        return category2.get(id);
-    }
-
 }
