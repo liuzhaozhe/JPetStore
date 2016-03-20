@@ -17,7 +17,7 @@
 <div id="header">
     <div id="logo">
         <div id="logo_image">
-            <a href="index.jsp"><img src="../image/logo-topbar.gif" alt="logo" border="0px"/></a>
+            <a href="index.jsp" class="logoa"><img src="../image/logo-topbar.gif" alt="logo" border="0px"/></a>
         </div>
     </div>
     <div id="header_main">
@@ -25,15 +25,15 @@
             <a class="account" href="shoppingCar.jsp"><img src="../image/cart.gif" alt="购物车"/></a>
             <img src="../image/separator.gif"/>
             <%--判断是否登陆--%>
-            <c:if test="${sessionScope.customer == null}">
+            <c:if test="${sessionScope.user == null}">
                 <a class="account" href="login.jsp">登陆</a>
                 <img src="../image/separator.gif"/>
                 <a class="account" href="sign.jsp">注册</a>
             </c:if>
-            <c:if test="${sessionScope.customer != null}">
-                <a class="account" href="customer.jsp">${sessionScope.customer.username}</a>
+            <c:if test="${sessionScope.user != null}">
+                <a class="account" href="customer.jsp">${sessionScope.user.username}</a>
                 <img src="../image/separator.gif"/>
-                <a class="account" href="unsignServlet">注销</a>
+                <a class="account" href="/unsign">注销</a>
             </c:if>
         </div>
     </div>
@@ -59,15 +59,15 @@
 </div>
 <div id="quicklinks">
     <div id="link">
-        <a class="outlink" href="categoryServlet?category=BD">鸟</a>
+        <a class="outlink" href="/getCategory?category=BD">鸟</a>
         <img src="../image/separator.gif"/>
-        <a class="outlink" href="categoryServlet?category=CA">猫</a>
+        <a class="outlink" href="/getCategory?category=CA">猫</a>
         <img src="../image/separator.gif"/>
-        <a class="outlink" href="categoryServlet?category=DG">狗</a>
+        <a class="outlink" href="/getCategory?category=DG">狗</a>
         <img src="../image/separator.gif"/>
-        <a class="outlink" href="categoryServlet?category=FI">鱼</a>
+        <a class="outlink" href="/getCategory?category=FI">鱼</a>
         <img src="../image/separator.gif"/>
-        <a class="outlink" href="categoryServlet?category=RP">爬行动物</a>
+        <a class="outlink" href="/getCategory?category=RP">爬行动物</a>
     </div>
 </div>
 <div id="body">

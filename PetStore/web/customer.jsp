@@ -1,60 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hezhujun
-  Date: 2016/3/9
-  Time: 14:19
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>JPetStore</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-<div id="header">
-    <div id="logo">
-        <div id="logo_image">
-            <a href="#"><img src="image/logo-topbar.gif" alt="logo" border="0px"/></a>
-        </div>
-    </div>
-    <div id="header_main">
-        <div id="account">
-            <a class="account" href="#">
-                <img src="image/cart.gif" alt="购物车"/>
-            </a>
-            <img src="image/separator.gif"/>
-            <a class="account" href="#">登陆</a>
-            <img src="image/separator.gif"/>
-            <a class="account" href="#">?</a>
-        </div>
-    </div>
-    <div id="header_search">
-        <div id="search">
-            <form action="" method="post">
-                <input type="text" name="search"/>
-                <input type="submit" value="查询"/>
-            </form>
-        </div>
-    </div>
-</div>
-<div id="quicklinks">
-    <div id="link">
-        <a class="outlink" href="#">鸟</a>
-        <img src="image/separator.gif"/>
-        <a class="outlink" href="#">猫</a>
-        <img src="image/separator.gif"/>
-        <a class="outlink" href="#">狗</a>
-        <img src="image/separator.gif"/>
-        <a class="outlink" href="#">鱼</a>
-        <img src="image/separator.gif"/>
-        <a class="outlink" href="#">爬行动物</a>
-    </div>
-</div>
-<div id="body">
+<%@include file="WEB-INF/jsp/common/top.jsp"%>
     <div id="body_main">
         <div class="sing-panel">
-            <form action="" method="post" class="sign">
+            <form action="" method="post" class="sign" onsubmit="return checkForm(this)">
                 <table align="center">
                     <tr>
                         <td>
@@ -69,7 +17,7 @@
                             修改密码：
                         </td>
                         <td>
-                            <input type="password" name="password"/>
+                            <input type="password" name="password" id="password"/>
                         </td>
                     </tr>
                     <tr>
@@ -77,7 +25,8 @@
                             确认密码：
                         </td>
                         <td>
-                            <input type="password" name="password"/><span id="checkPassword"></span>
+                            <input type="password" name="password2" id="password2"/>
+                            <span id="checkPassword"></span>
                         </td>
                     </tr>
                     <tr>
@@ -116,11 +65,26 @@
             </form>
         </div>
     </div>
-</div>
-<div id="foot">
-    <div id="foot_main">
-        <a class="outlink" href="#">www.mybatis.org</a>
-    </div>
-</div>
-</body>
-</html>
+    <script>
+        function check_password(){
+            var password1 = $("#password").val();
+            var passeord2 = $("#password2").val();
+            if(password1 != passeord2){
+                $("#checkPassword").text("两次密码不相同");
+            } else {
+                $("#checkPassword").text("<img src=\"../image/right.jpg\" width=\"30px\" height=\"30px\" />");
+            }
+        }
+        function checkForm(form){
+            with (form){
+                if (password.value != "" && password2.value == ""){
+                    alert("请确认密码");
+                    password2.focus();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    </script>
+<%@include file="WEB-INF/jsp/common/buttom.jsp"%>
