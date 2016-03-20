@@ -108,7 +108,7 @@ public class ItemDao {
             String sql = "UPDATE shoppingcar SET amount = ?, price = ? WHERE username = ? AND productId = ?";
             statement = connection.prepareStatement(sql);
             statement.setInt(1, item.getAmount());
-            statement.setDouble(2, item.getPrice());
+            statement.setDouble(2, item.getTotalPrice());
             statement.setString(3, username);
             statement.setString(4, item.getProductId());
             int i = statement.executeUpdate();
@@ -196,7 +196,7 @@ public class ItemDao {
         PreparedStatement statement = null;
         try {
             connection = JDBCUtil.getConnection();
-            String sql = "INSERT INTO shoppingcar VALUES (?,?,?,?)";
+            String sql = "INSERT INTO bill_product VALUES (?,?,?,?)";
             statement = connection.prepareStatement(sql);
             statement.setString(1, billId);
             statement.setString(2, item.getProductId());

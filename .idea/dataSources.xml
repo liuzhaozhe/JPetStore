@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="431219766">
-    <data-source source="LOCAL" name="MySQL - petstore@localhost" uuid="d3f6937c-f176-493c-b985-7a3ab72061b8">
+  <component name="DataSourceManagerImpl" format="xml" hash="2929114325">
+    <data-source source="LOCAL" name="MySQL - jpetstore@localhost" uuid="4428fc81-1c54-4427-a4a9-f8a5562b05d7">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/petstore</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/jpetstore</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

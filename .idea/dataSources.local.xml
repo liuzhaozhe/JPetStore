@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - petstore@localhost" uuid="d3f6937c-f176-493c-b985-7a3ab72061b8">
+    <data-source name="MySQL - jpetstore@localhost" uuid="4428fc81-1c54-4427-a4a9-f8a5562b05d7">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <schema-pattern>petstore.*</schema-pattern>
-      <default-schemas>petstore.*</default-schemas>
+      <schema-pattern>jpetstore.*</schema-pattern>
+      <default-schemas>jpetstore.*</default-schemas>
     </data-source>
   </component>
 </project>

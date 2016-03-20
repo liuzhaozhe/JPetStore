@@ -7,7 +7,7 @@
         <div class="login-panel">
             <div class="login">
                 <h1>欢迎来到宠物商店</h1>
-                <form action="loginServlet" method="post">
+                <form action="/login" method="post">
                     <c:if test="${requestScope.msg != null}">
                         <span id="msg">${requestScope.msg}</span>
                         <br/>
@@ -28,16 +28,17 @@
         function check_user(){
             var username = $("#username").val();
             if(username != ""){
-                $.post("checkUsernameServlet",
+                $.post("/checkUsername",
                         {
                             username:username
                         },
                         function(data,status){
                             if(status == "success"){
-                                if(data == "exist")
-                                $("#checkUsername").text("");
-                            } else {
-                                $("#checkUsername").text("该用户不存在");
+                                if(data == "exist"){
+                                    $("#checkUsername").text("");
+                                }else {
+                                    $("#checkUsername").text("该用户不存在");
+                                }
                             }
                         });
             }

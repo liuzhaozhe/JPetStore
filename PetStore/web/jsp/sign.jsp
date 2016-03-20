@@ -2,7 +2,10 @@
 <%@include file="../WEB-INF/jsp/common/top.jsp"%>
 <div id="body_main">
     <div class="sing-panel">
-        <form action="" method="post" class="sign" onsubmit="return checkForm(form)">
+        <c:if test="${requestScope.msg == null}">
+            <span id="msg"></span>
+        </c:if>
+        <form action="/sign" method="post" class="sign">
             <table align="center">
                 <tr>
                     <td>
@@ -18,7 +21,8 @@
                         <span>*</span>密码：
                     </td>
                     <td>
-                        <input type="password" name="password" required="required" id="password"/>
+                        <input type="password" name="password" required="required" id="password" onblur="check_password()"/>
+                        <span id="passwordValue"></span>
                     </td>
                 </tr>
                 <tr>
@@ -35,7 +39,7 @@
                         地址：
                     </td>
                     <td>
-                        <input type="text" name="address">
+                        <input type="text" name="address" />
                     </td>
                 </tr>
                 <tr>
@@ -43,7 +47,7 @@
                         邮箱：
                     </td>
                     <td>
-                        <input type="email" name="email">
+                        <input type="email" name="email" />
                     </td>
                 </tr>
                 <tr>
@@ -51,15 +55,15 @@
                         电话号码：
                     </td>
                     <td>
-                        <input type="tel" name="phone">
+                        <input type="tel" name="phone" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input class="button" type="reset" value="重置">
+                        <input class="button" type="reset" value="重置" />
                     </td>
                     <td>
-                        <input class="button" type="submit" value="注册">
+                        <input class="button" type="submit" value="注册" />
                     </td>
                 </tr>
             </table>
@@ -70,16 +74,22 @@
     function check_username(){
         var username = $("#username").val();
         if(username != ""){
-            $.post("checkUsernameServlet",
+            $.post("/checkUsername",
                     {
                         username:username
                     },
                     function(data,status){
                         if(status == "success"){
-                            if(data == "exist")
+                            if(data == "exist") {
                                 $("#checkUsername").text("该用户已存在");
-                        } else {
-                            $("#checkUsername").text("<img src=\"../image/right.jpg\" width=\"30px\" height=\"30px\" />");
+                            }else {
+                                var img = document.createElement("img");
+                                img.setAttribute("src", "../image/right.jpg");
+                                img.setAttribute("width","30px");
+                                img.setAttribute("height","30px");
+                                $("#checkUsername").text("");
+                                $("#checkUsername").append(img);
+                            }
                         }
                     });
         }
@@ -90,7 +100,12 @@
         if(password1 != passeord2){
             $("#checkPassword").text("两次密码不相同");
         } else {
-            $("#checkPassword").text("<img src=\"../image/right.jpg\" width=\"30px\" height=\"30px\" />");
+            var img = document.createElement("img");
+            img.setAttribute("src", "../image/right.jpg");
+            img.setAttribute("width","30px");
+            img.setAttribute("height","30px");
+            $("#checkPassword").text("");
+            $("#checkPassword").append(img);
         }
     }
 </script>
