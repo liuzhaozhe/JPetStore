@@ -26,6 +26,7 @@
                     <th width="20%">商品名称</th>
                     <th width="10%">商品价格</th>
                     <th width="10%">数量</th>
+                    <th width="10%">库存</th>
                     <th width="10%">总价格</th>
                     <th width="10%">操作</th>
                 </tr>
@@ -39,11 +40,6 @@
                 </tr>
             </table>
             总金额：<input type="number" name="totalPrice" disabled="disabled" />
-            支付方式：
-            <select>
-                <option value="支付宝">支付宝</option>
-                <option value="微信">微信</option>
-            </select>
             <hr />
             <input type="submit" value="确认账单" />
         </form>

@@ -9,7 +9,7 @@
                             用户名：
                         </td>
                         <td>
-                            <input type="text" name="username" disabled="disabled"/>
+                            ${sessionScope.user.username}
                         </td>
                     </tr>
                     <tr>
@@ -34,7 +34,7 @@
                             地址：
                         </td>
                         <td>
-                            <input type="text" name="address">
+                            <input type="text" name="address" value="${sessionScope.user.address}">
                         </td>
                     </tr>
                     <tr>
@@ -42,7 +42,7 @@
                             邮箱：
                         </td>
                         <td>
-                            <input type="email" name="email">
+                            <input type="email" name="email" value="${sessionScope.user.email}">
                         </td>
                     </tr>
                     <tr>
@@ -50,7 +50,7 @@
                             电话号码：
                         </td>
                         <td>
-                            <input type="tel" name="phone">
+                            <input type="tel" name="phone" value="${sessionScope.user.phone}">
                         </td>
                     </tr>
                     <tr>
@@ -68,11 +68,19 @@
     <script>
         function check_password(){
             var password1 = $("#password").val();
+            if (password1 == ""){
+                return;
+            }
             var passeord2 = $("#password2").val();
             if(password1 != passeord2){
                 $("#checkPassword").text("两次密码不相同");
             } else {
-                $("#checkPassword").text("<img src=\"../image/right.jpg\" width=\"30px\" height=\"30px\" />");
+                var img = document.createElement("img");
+                img.setAttribute("src", "../image/right.jpg");
+                img.setAttribute("width","30px");
+                img.setAttribute("height","30px");
+                $("#checkPassword").text("");
+                $("#checkPassword").append(img);
             }
         }
         function checkForm(form){

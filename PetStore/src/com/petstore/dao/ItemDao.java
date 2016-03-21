@@ -25,6 +25,7 @@ public class ItemDao {
 
     /**
      * 获取账单的商品信息
+     *
      * @param billId
      * @return
      */
@@ -60,11 +61,12 @@ public class ItemDao {
 
     /**
      * 获取用户购物车商品信息
+     *
      * @param username
      * @return
      */
-    public List<Item> getCarItem(String username) {
-        List<Item> billList = new ArrayList<Item>();
+    public List<Item> getCarItemList(String username) {
+        List<Item> itemList = new ArrayList<Item>();
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -81,7 +83,7 @@ public class ItemDao {
                 item.setPrice(resultSet.getDouble(3));
                 item.setAmount(resultSet.getInt(4));
                 item.setTotalPrice(resultSet.getDouble(5));
-                billList.add(item);
+                itemList.add(item);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -90,11 +92,12 @@ public class ItemDao {
             JDBCUtil.close(statement);
             JDBCUtil.close(connection);
         }
-        return billList;
+        return itemList;
     }
 
     /**
      * 更新购物车商品数量信息
+     *
      * @param item
      * @param username
      * @return
@@ -126,6 +129,7 @@ public class ItemDao {
 
     /**
      * 删除购物车中某一项商品
+     *
      * @param username
      * @param productId
      * @return
@@ -155,6 +159,7 @@ public class ItemDao {
 
     /**
      * 添加用户购物车商品信息
+     *
      * @param item
      * @param username
      * @return
@@ -186,6 +191,7 @@ public class ItemDao {
 
     /**
      * 添加账单的商品信息
+     *
      * @param item
      * @param billId
      * @return
@@ -213,5 +219,72 @@ public class ItemDao {
             JDBCUtil.close(connection);
         }
         return result;
+    }
+
+    /**
+     * 判断是否已经加入到购物车中
+     *
+     * @param productId
+     * @param username
+     * @return true：已加入；false：未加入
+     */
+    public boolean checkCarItem(String productId, String username) {
+        boolean result = false;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = JDBCUtil.getConnection();
+            String sql = "SELECT username FROM shoppingcar WHERE username = ? AND productId = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, username);
+            statement.setString(2, productId);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                result = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
+        }
+        return result;
+    }
+
+    /**
+     * 获取一项商品
+     * @param productId
+     * @param username
+     * @return
+     */
+    public Item getCarItem(String productId, String username) {
+        Item item = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = JDBCUtil.getConnection();
+            String sql = "SELECT item.productId, p.productName,p.price, item.amount,item.price FROM shoppingcar AS item,product AS p WHERE item.username = ? AND item.productId = ? AND p.productId = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, username);
+            statement.setString(2, productId);
+            statement.setString(3, productId);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                item = new Item();
+                item.setProductId(resultSet.getString(1));
+                item.setProductName(resultSet.getString(2));
+                item.setPrice(resultSet.getDouble(3));
+                item.setAmount(resultSet.getInt(4));
+                item.setTotalPrice(resultSet.getDouble(5));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
+        }
+        return item;
     }
 }

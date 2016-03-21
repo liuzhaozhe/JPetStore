@@ -22,7 +22,7 @@
     </div>
     <div id="header_main">
         <div id="account">
-            <a class="account" href="shoppingCar.jsp"><img src="../image/cart.gif" alt="购物车"/></a>
+            <a class="account" href="/getShoppingCar"><img src="../image/cart.gif" alt="购物车"/></a>
             <img src="../image/separator.gif"/>
             <%--判断是否登陆--%>
             <c:if test="${sessionScope.user == null}">
@@ -31,7 +31,7 @@
                 <a class="account" href="sign.jsp">注册</a>
             </c:if>
             <c:if test="${sessionScope.user != null}">
-                <a class="account" href="customer.jsp">${sessionScope.user.username}</a>
+                <a class="account" href="user.jsp">${sessionScope.user.username}</a>
                 <img src="../image/separator.gif"/>
                 <a class="account" href="/unsign">注销</a>
             </c:if>

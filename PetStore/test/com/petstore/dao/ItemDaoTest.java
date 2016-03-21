@@ -24,14 +24,14 @@ public class ItemDaoTest {
 
     @Test
     public void testGetCarItem() throws Exception {
-        List<Item> item = ItemDao.getInstance().getCarItem("123");
+        List<Item> item = ItemDao.getInstance().getCarItemList("123");
         Item ite = item.get(0);
         System.out.print(ite.getProductName());
     }
 
     @Test
     public void testUpdate() throws Exception {
-        List<Item> item = ItemDao.getInstance().getCarItem("123");
+        List<Item> item = ItemDao.getInstance().getCarItemList("123");
         Item ite = item.get(0);
         ite.setAmount(3);
         ite.setTotalPrice(150);

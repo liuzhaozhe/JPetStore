@@ -8,7 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by hezhujun on 2016/3/18.
@@ -124,5 +126,63 @@ public class ProductDao {
             JDBCUtil.close(connection);
         }
         return result;
+    }
+
+    /**
+     * 获取商品库存
+     * @param productId
+     * @return
+     */
+    public int getStock(String productId) {
+        int stock = 0;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = JDBCUtil.getConnection();
+            String sql = "SELECT amount FROM product WHERE productId = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, productId);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()){
+                stock = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(resultSet);
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
+        }
+        return stock;
+    }
+
+    /**
+     * 通过名字的模糊查询获取商品名字
+     * @param productName
+     * @return
+     */
+    public Map<String, String> getProductNameList(String productName){
+        Map<String, String> productNameList = new HashMap<String, String>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = JDBCUtil.getConnection();
+            String sql = "SELECT productId,productName FROM product WHERE productName LIKE ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, productName + "%");
+            resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                productNameList.put(resultSet.getString(1), resultSet.getString(2));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(resultSet);
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
+        }
+        return productNameList;
     }
 }
