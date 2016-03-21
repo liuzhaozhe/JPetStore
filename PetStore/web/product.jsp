@@ -18,8 +18,7 @@
             <li>简介：${sessionScope.product.description}</li>
         </ul>
         <button id="addShoppingCar">加入购物车</button>
-        <a href="/addShoppingCar?productId=${sessionScope.product.productId}">加入购物车</a>
-        <a href="#">直接购买</a>
+        <button id="buy">直接购买</button>
     </div>
 </div>
 <script type="text/javascript">
@@ -32,6 +31,9 @@
                             alert(data);
                         }
                     });
+        });
+        $("#buy").click(function(){
+            location.href = "/addBillByProduct?productId=" + $("#productId").text();
         });
     });
 </script>

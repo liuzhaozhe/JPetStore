@@ -15,20 +15,20 @@
             <tr id="${item[0].productId}">
                 <td>${item[0].productId}</td>
                 <td>${item[0].productName}</td>
-                <td id="${item[0].productId}_price">${item[0].price}</td>
+                <td><em id="${item[0].productId}_price">${item[0].price}</em>￥</td>
                 <td><input type="number" value="${item[0].amount}" min="1" id="${item[0].productId}_amount"
                            onchange="changTotalPrice('${item[0].productId}')"/></td>
                 <td id="${item[0].productId}_stock">${item[1]}</td>
                 <td id="${item[0].productId}_totalPrice">${item[0].totalPrice}￥</td>
                 <td>
-                    <button onclick="updateShoppingCar('${item[0].productId}')">修改</button>
+                    <%--<button onclick="updateShoppingCar('${item[0].productId}')">修改</button>--%>
                     <button onclick="deleteShoppingCar('${item[0].productId}')">删除</button>
-                    <button>购买</button>
+                    <button onclick="buy('${item[0].productId}')">购买</button>
                 </td>
             </tr>
         </c:forEach>
     </table>
-    <button>购买所有商品</button>
+    <button onclick="buyAll()">购买所有商品</button>
 </div>
 <script>
     function changTotalPrice(productId) {
@@ -37,6 +37,11 @@
         var totalPrice = amount * price;
         $("#" + productId + "_totalPrice").text(totalPrice + "￥");
         stockFlush(productId);
+        $.post("/updateShoppingCar",
+                {
+                    productId: productId,
+                    amount: $("#" + productId + "_amount").val()
+                });
     }
     function stockFlush(productId) {
         $.post("/getStock",
@@ -74,13 +79,19 @@
                 function (data, status) {
                     if (status == "success") {
                         if (data == "success") {
-                            alert("删除成功")
+                            alert("删除成功");
                             $("#" + productId).remove();
                         } else {
                             alert("删除失败");
                         }
                     }
                 });
+    }
+    function buy(productId){
+        location.href = "/addBillByCar?productId=" + productId;
+    }
+    function buyAll(){
+        location.href = "/addBillByCar";
     }
 </script>
 <%@include file="WEB-INF/jsp/common/buttom.jsp" %>

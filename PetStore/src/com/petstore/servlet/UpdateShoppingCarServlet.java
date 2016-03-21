@@ -41,6 +41,7 @@ public class UpdateShoppingCarServlet extends HttpServlet {
                     itemTemp.setAmount(item.getAmount());
                     itemTemp.setTotalPrice(item.getTotalPrice());
                 }
+                break;
             }
             request.getSession().setAttribute("itemList", itemList);
         } else{

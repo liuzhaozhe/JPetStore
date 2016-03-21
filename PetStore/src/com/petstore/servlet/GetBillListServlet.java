@@ -26,6 +26,6 @@ public class GetBillListServlet extends HttpServlet {
         String username = user.getUsername();
         List<Bill> billList = BillDao.getInstance().getBillList(username);
         request.getSession().setAttribute("billList", billList);
-        response.sendRedirect("orderList.jsp");
+        response.sendRedirect("billList.jsp");
     }
 }

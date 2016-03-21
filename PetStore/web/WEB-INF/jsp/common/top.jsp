@@ -10,7 +10,8 @@
 <html>
 <head>
     <title>JPetStore</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/mystyle.css">
     <script src="../js/jquery-1.8.3.min.js"></script>
 </head>
 <body>
