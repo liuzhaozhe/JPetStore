@@ -40,8 +40,8 @@ public class UpdateShoppingCarServlet extends HttpServlet {
                 if (itemTemp.getProductId().equals(productId)){
                     itemTemp.setAmount(item.getAmount());
                     itemTemp.setTotalPrice(item.getTotalPrice());
+                    break;
                 }
-                break;
             }
             request.getSession().setAttribute("itemList", itemList);
         } else{

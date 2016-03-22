@@ -17,17 +17,17 @@ import java.util.List;
 public class DeleItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = request.getParameter("productId");
-        List<Object[]> itemList = (List<Object[]>) request.getSession().getAttribute("itemList");
+        List<Object[]> buyList = (List<Object[]>) request.getSession().getAttribute("buyList");
         int index = -1;
-        for (int i = 0; i < itemList.size(); i++){
-            Item itemTemp = (Item) itemList.get(i)[0];
+        for (int i = 0; i < buyList.size(); i++){
+            Item itemTemp = (Item) buyList.get(i)[0];
             if(itemTemp.getProductId().equals(productId)){
                 index = i;
                 break;
             }
         }
-        itemList.remove(index);
-        request.getSession().setAttribute("itemList", itemList);
+        buyList.remove(index);
+        request.getSession().setAttribute("buyList", buyList);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

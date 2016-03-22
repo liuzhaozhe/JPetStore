@@ -29,7 +29,7 @@
             <c:if test="${sessionScope.user == null}">
                 <a class="account" href="login.jsp">登陆</a>
                 <img src="../image/separator.gif"/>
-                <a class="account" href="sign.jsp">注册</a>
+                <a class="account" href="/sign.jsp">注册</a>
             </c:if>
             <c:if test="${sessionScope.user != null}">
                 <a class="account" href="user.jsp">${sessionScope.user.username}</a>
@@ -40,14 +40,41 @@
     </div>
     <div id="header_search">
         <div id="search">
-            <form action="" method="post" onsubmit="return check(this)">
-                <input type="text" name="search"/>
+            <form action="/search" method="post" onsubmit="return check(this)">
+                <input type="text" name="search" onchange="getName()" id="searchInput" list="name_list"/>
+                <datalist id="name_list">
+                </datalist>
                 <input type="submit" value="查询"/>
             </form>
             <script type="text/javascript">
+                function getName() {
+                    var data_list = document.getElementById("name_list");
+                    var search = $("#searchInput").val();
+                    if (search == ""){
+                       return;
+                    }
+                    while(data_list.hasChildNodes()) //当div下还存在子节点时 循环继续
+                    {
+                        data_list.removeChild(data_list.firstChild);
+                    }
+                    $.post("/matchName",
+                            {
+                                search: search
+                            },
+                            function (data, status) {
+                                if (status == "success"){
+                                    var obj = eval("(" + data + ")");
+                                    for (var i = 0; i < obj.length; i++) {
+                                        var option = document.createElement("option");
+                                        option.setAttribute("value", obj[i].name);
+                                        data_list.appendChild(option);
+                                    }
+                                }
+                            });
+                }
                 function check(form) {
-                    with (form){
-                        if(search.value == ""){
+                    with (form) {
+                        if (search.value == "") {
                             return false;
                         } else {
                             return true;

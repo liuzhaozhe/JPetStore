@@ -98,6 +98,39 @@ public class ProductDao {
     }
 
     /**
+     * 通过名字获取商品简要信息
+     * @param name
+     * @return String[3]:productId,productName,url
+     */
+    public List<String[]> getProdutInfoByName(String name) {
+        List<String[]> productInfoList = new ArrayList<String[]>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = JDBCUtil.getConnection();
+            String sql = "SELECT productId,productName,url FROM product WHERE productName LIKE ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, name + "%");
+            resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                String[] productInfo = new String[3];
+                productInfo[0] = resultSet.getString(1);
+                productInfo[1] = resultSet.getString(2);
+                productInfo[2] = resultSet.getString(3);
+                productInfoList.add(productInfo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(resultSet);
+            JDBCUtil.close(statement);
+            JDBCUtil.close(connection);
+        }
+        return productInfoList;
+    }
+
+    /**
      * 更新商品数量
      * @param id
      * @param amount
@@ -162,19 +195,19 @@ public class ProductDao {
      * @param productName
      * @return
      */
-    public Map<String, String> getProductNameList(String productName){
-        Map<String, String> productNameList = new HashMap<String, String>();
+    public List<String> getProductNameList(String productName){
+        List<String> productNameList = new ArrayList<String>();
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
             connection = JDBCUtil.getConnection();
-            String sql = "SELECT productId,productName FROM product WHERE productName LIKE ?";
+            String sql = "SELECT productName FROM product WHERE productName LIKE ?";
             statement = connection.prepareStatement(sql);
             statement.setString(1, productName + "%");
             resultSet = statement.executeQuery();
             while (resultSet.next()){
-                productNameList.put(resultSet.getString(1), resultSet.getString(2));
+                productNameList.add(resultSet.getString(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();

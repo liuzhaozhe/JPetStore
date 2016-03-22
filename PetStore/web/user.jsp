@@ -2,7 +2,10 @@
 <%@include file="WEB-INF/jsp/common/top.jsp"%>
     <div id="body_main">
         <div class="sing-panel">
-            <form action="" method="post" class="sign" onsubmit="return checkForm(this)">
+            <c:if test="${param.msg}">
+                <span>${param.msg}</span>
+            </c:if>
+            <form action="/updatUser" method="post" class="sign" onsubmit="return checkForm(this)">
                 <table align="center">
                     <tr>
                         <td>
@@ -59,7 +62,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><a href="#" >查看账单</a></td>
+                        <td colspan="2" align="center"><a href="/getBillList" >查看账单</a></td>
                     </tr>
                 </table>
             </form>

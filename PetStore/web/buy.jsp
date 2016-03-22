@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="WEB-INF/jsp/common/top.jsp" %>
 <div id="body_main">
-    <form action="" method="post">
+    <form action="/addBill" method="post" onsubmit="return checkForm(this)">
         <table cellpadding="5">
             <tr>
                 <td>
@@ -47,7 +47,9 @@
     </form>
 </div>
 <script>
-    window.onload = updateTotalPrice;
+    $(document).ready(function(){
+        updateTotalPrice();
+    });
     function changTotalPrice(productId) {
         var amount = $("#" + productId + "_amount").val();
         var price = $("#" + productId + "_price").text();
@@ -107,6 +109,14 @@
 
         });
         $(".totalPrice").text(price);
+    }
+    function checkForm(form){
+        if($(".totalPrice").text() == 0){
+            alert("您没有选择商品，请返回其它页面选择您想购买的商品");
+            return false;
+        } else {
+            return true;
+        }
     }
 </script>
 <%@include file="WEB-INF/jsp/common/buttom.jsp" %>

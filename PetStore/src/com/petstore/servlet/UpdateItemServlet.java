@@ -25,8 +25,8 @@ public class UpdateItemServlet extends HttpServlet {
             if (itemTemp.getProductId().equals(productId)){
                 itemTemp.setAmount(amount);
                 itemTemp.setTotalPrice(amount * itemTemp.getPrice());
+                break;
             }
-            break;
         }
         request.getSession().setAttribute("buyList", buyList);
     }

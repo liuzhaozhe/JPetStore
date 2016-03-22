@@ -20,7 +20,7 @@
                     <br/>
                     <input class="button" type="submit" value="登陆">
                 </form>
-                <a href="#">注册新用户</a>
+                <a href="/sign.jsp">注册新用户</a>
             </div>
         </div>
     </div>

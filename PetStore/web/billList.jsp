@@ -12,21 +12,23 @@
             <th width="5%">操作</th>
         </tr>
         <c:forEach items="${sessionScope.billList}" var="bill">
-            <td>${bill.billId}</td>
-            <td>${bill.consignee}</td>
-            <td>${bill.consigneeAddress}</td>
-            <td>${bill.consigneePhone}</td>
-            <td>${bill.money}￥</td>
-            <td>${bill.createTime}</td>
-            <td>
-                <button onclick="gotoDetial('${bill.billId}')">查看详情</button>
-            </td>
+            <tr>
+                <td>${bill.billId}</td>
+                <td>${bill.consignee}</td>
+                <td>${bill.consigneeAddress}</td>
+                <td>${bill.consigneePhone}</td>
+                <td>${bill.money}￥</td>
+                <td>${bill.createTime}</td>
+                <td>
+                    <button onclick="gotoDetail('${bill.billId}')">查看详情</button>
+                </td>
+            </tr>
         </c:forEach>
     </table>
 </div>
 <script type="text/javascript">
-    function gotoDetial(billList) {
-        window.location.href = "/getBillList?billId" + billList;
+    function gotoDetail(billId) {
+        window.location.href = "/getBillDetail?billId=" + billId;
     }
 </script>
 <%@include file="WEB-INF/jsp/common/buttom.jsp" %>

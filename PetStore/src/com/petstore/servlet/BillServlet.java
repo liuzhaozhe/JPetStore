@@ -16,9 +16,10 @@ import java.util.*;
 /**
  * Created by hezhujun on 2016/3/21.
  */
-@WebServlet(name = "BillServlet")
+@WebServlet(name = "BillServlet", value = "/addBill")
 public class BillServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String consignee = request.getParameter("consignee");
         String address = request.getParameter("address");
         String phone = request.getParameter("phone");
@@ -46,7 +47,7 @@ public class BillServlet extends HttpServlet {
         bill.setMoney(totalPrice);
         request.getSession().setAttribute("bill", bill);
         request.getSession().setAttribute("billItemList", billItemList);
-        response.sendRedirect("billDetial.jsp");
+        response.sendRedirect("okBuy.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
