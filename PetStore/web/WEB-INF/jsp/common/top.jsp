@@ -32,7 +32,7 @@
                 <a class="account" href="/sign.jsp">注册</a>
             </c:if>
             <c:if test="${sessionScope.user != null}">
-                <a class="account" href="user.jsp">${sessionScope.user.username}</a>
+                <a class="account" href="user.jsp" id="userName">${sessionScope.user.username}</a>
                 <img src="../image/separator.gif"/>
                 <a class="account" href="/unsign">注销</a>
             </c:if>

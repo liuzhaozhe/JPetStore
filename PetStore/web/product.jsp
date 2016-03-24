@@ -24,6 +24,11 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $("#addShoppingCar").click(function () {
+            var username = $("#userName").text();
+            if (username == ""){
+                alert("请先登陆");
+                return ;
+            }
             var productId = $("#productId").text();
             $.get("/addShoppingCar",
                     function (data, status) {
@@ -33,8 +38,14 @@
                     });
         });
         $("#buy").click(function(){
+            var username = $("#userName").text();
+            if (username == ""){
+                alert("请先登陆");
+                return ;
+            }
             location.href = "/addBillByProduct?productId=" + $("#productId").text();
         });
     });
+
 </script>
 <%@include file="WEB-INF/jsp/common/buttom.jsp" %>

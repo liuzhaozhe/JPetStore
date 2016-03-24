@@ -134,19 +134,25 @@ public class ProductDao {
      * 更新商品数量
      * @param id
      * @param amount
-     * @param sellCount
      * @return
      */
-    public boolean update(String id, int amount, int sellCount){
+    public boolean update(String id, int amount){
         boolean result = false;
         Connection connection = null;
         PreparedStatement statement = null;
         try {
             connection = JDBCUtil.getConnection();
+            Object[] o = getProduct(id);
+            Product product = (Product) o[0];
+            if (product.getAmount() < amount){
+                return false;
+            }
+            product.setAmount(product.getAmount() - amount);
+            product.setSellCount(product.getSellCount() + amount);
             String sql = "UPDATE product SET amount = ?, sellCount = ? WHERE productId = ?";
             statement = connection.prepareStatement(sql);
-            statement.setInt(1, amount);
-            statement.setInt(2, sellCount);
+            statement.setInt(1, product.getAmount());
+            statement.setInt(2, product.getSellCount());
             statement.setString(3, id);
             int i = statement.executeUpdate();
             if (i == 1) {

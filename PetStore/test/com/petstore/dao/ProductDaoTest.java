@@ -33,10 +33,4 @@ public class ProductDaoTest {
             System.out.println();
         }
     }
-
-    @Test
-    public void testUpdate() throws Exception {
-        boolean result = ProductDao.getInstance().update("BD-FC-01", 10, 2);
-        System.out.println(result);
-    }
 }

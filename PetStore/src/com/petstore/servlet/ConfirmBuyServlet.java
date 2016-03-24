@@ -2,6 +2,7 @@ package com.petstore.servlet;
 
 import com.petstore.dao.BillDao;
 import com.petstore.dao.ItemDao;
+import com.petstore.dao.ProductDao;
 import com.petstore.entity.Bill;
 import com.petstore.entity.Item;
 import com.petstore.entity.User;
@@ -34,6 +35,7 @@ public class ConfirmBuyServlet extends HttpServlet {
             for (Item item : billItemList
                     ) {
                 ItemDao.getInstance().addBillAndProduct(item, bill.getBillId());
+                ProductDao.getInstance().update(item.getProductId(),item.getAmount());
             }
             response.sendRedirect("success.jsp");
         } else {

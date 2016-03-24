@@ -5,13 +5,13 @@
         <table cellpadding="5">
             <tr>
                 <td>
-                    收货人：<input type="text" name="consignee" required="required"/>
+                    收货人：<input type="text" name="consignee" value="${sessionScope.user.username}" required="required"/>
                 </td>
                 <td>
-                    地址：<input type="text" name="address" required="required"/>
+                    地址：<input type="text" name="address" value="${sessionScope.user.address}" required="required"/>
                 </td>
                 <td>
-                    电话号码：<input type="text" name="phone" required="required"/>
+                    电话号码：<input type="text" name="phone" value="${sessionScope.user.phone}" required="required"/>
                 </td>
             </tr>
         </table>
