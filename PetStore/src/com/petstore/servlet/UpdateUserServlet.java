@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 /**
  * Created by liuzheng on 2016/3/22.
  */
-@WebServlet(name = "UpdateUserServlet", value = "/updatUser")
+@WebServlet(name = "UpdateUserServlet", value = "/updateUser")
 public class UpdateUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -38,7 +38,8 @@ public class UpdateUserServlet extends HttpServlet {
             response.sendRedirect("user.jsp");
         } else {
             msg = "修改资料失败";
-            request.getRequestDispatcher("user.jsp?msg=" + msg).forward(request, response);
+            request.setAttribute("msg", msg);
+            request.getRequestDispatcher("user.jsp").forward(request, response);
         }
     }
 

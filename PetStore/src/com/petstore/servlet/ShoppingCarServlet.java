@@ -40,6 +40,6 @@ public class ShoppingCarServlet extends HttpServlet {
         }
         request.getSession().setAttribute("itemList", itemList);
 
-        response.sendRedirect("shoppingCar.jsp");
+        response.sendRedirect("./jsp/user/shoppingCar.jsp");
     }
 }

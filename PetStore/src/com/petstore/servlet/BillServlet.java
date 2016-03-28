@@ -47,7 +47,7 @@ public class BillServlet extends HttpServlet {
         bill.setMoney(totalPrice);
         request.getSession().setAttribute("bill", bill);
         request.getSession().setAttribute("billItemList", billItemList);
-        response.sendRedirect("okBuy.jsp");
+        response.sendRedirect("/jsp/bill/okBuy.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

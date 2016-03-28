@@ -20,7 +20,7 @@ public class UserFilter implements Filter {
         User user = (User) ((HttpServletRequest)req).getSession().getAttribute("user");
         if (user == null){
             req.setAttribute("msg", "请先登陆");
-            ((HttpServletRequest)req).getRequestDispatcher("login.jsp").forward(req, resp);
+            ((HttpServletRequest)req).getRequestDispatcher("jsp/user/login.jsp").forward(req, resp);
         } else {
             chain.doFilter(req, resp);
         }

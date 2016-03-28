@@ -28,6 +28,6 @@ public class ProductServlet extends HttpServlet {
         Category category = CategoryDao.getInstance().getCategory((String) o[1]);
         request.getSession().setAttribute("product", product);
         request.getSession().setAttribute("category", category);
-        response.sendRedirect("product.jsp");
+        response.sendRedirect("/jsp/product/product.jsp");
     }
 }
