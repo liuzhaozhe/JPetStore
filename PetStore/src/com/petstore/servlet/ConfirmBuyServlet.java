@@ -37,10 +37,10 @@ public class ConfirmBuyServlet extends HttpServlet {
                 ItemDao.getInstance().addBillAndProduct(item, bill.getBillId());
                 ProductDao.getInstance().update(item.getProductId(),item.getAmount());
             }
-            response.sendRedirect("success.jsp");
+            response.sendRedirect("/jsp/bill/success.jsp");
         } else {
             msg = "操作失败";
-            request.getRequestDispatcher("okBuy.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/bill/okBuy.jsp").forward(request, response);
         }
     }
 }

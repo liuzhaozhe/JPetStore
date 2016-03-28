@@ -40,6 +40,6 @@ public class AddBillByCarServlet extends HttpServlet {
             buyList.addAll(itemList);
         }
         request.getSession().setAttribute("buyList", buyList);
-        response.sendRedirect("buy.jsp");
+        response.sendRedirect("/jsp/bill/buy.jsp");
     }
 }

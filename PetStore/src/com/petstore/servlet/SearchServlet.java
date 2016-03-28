@@ -24,7 +24,7 @@ public class SearchServlet extends HttpServlet {
         List<String[]> productList = ProductDao.getInstance().getProdutInfoByName(search);
         if (productList == null || productList.size() != 1) {
             request.getSession().setAttribute("productList", productList);
-            response.sendRedirect("productList.jsp");
+            response.sendRedirect("./jsp/product/productList.jsp");
         } else {
             // 只有一个时直接到商品详细页
             Object[] o = ProductDao.getInstance().getProduct(productList.get(0)[0]);
@@ -32,7 +32,7 @@ public class SearchServlet extends HttpServlet {
             Category category = CategoryDao.getInstance().getCategory((String) o[1]);
             request.getSession().setAttribute("product", product);
             request.getSession().setAttribute("category", category);
-            response.sendRedirect("product.jsp");
+            response.sendRedirect("./jsp/product/product.jsp");
         }
     }
 

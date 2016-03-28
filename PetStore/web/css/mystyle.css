@@ -1,168 +1,61 @@
-@charset "UTF-8";
-
-body {
-    margin: 0px;
-    padding: 0px;
-    background-color: darkgray;
-}
-
-#header {
-    margin: 0px auto;
-    padding: 0px;
-    width: 90%;
-    height: 80px;
-    background-color: darkolivegreen;
-}
-
-#logo {
-    width: 30%;
-    height: 80px;
-    float: left;
-}
-
-#header_main {
-    width: 40%;
-    height: 80px;
-    float: left;
-}
-
-#header_search {
-    width: 30%;
-    height: 80px;
-    float: left;
-}
-
-#body {
-    width: 90%;
-    height: auto;
-    margin: 0px auto;
-    background-color: green;
-    overflow: hidden;
-}
-
-#foot {
-    width: 90%;
-    height: 50px;
-    margin: 0px auto;
-    background-color: darkolivegreen;
-}
-
-#logo_image {
-    width: auto;
-    height: auto;
-    margin: 10px;
-}
-
-a.logoa:active, a.logoa:link, a.logoa:hover, a.logoa:visited {
-    background-color: darkolivegreen;
-}
-
-#account {
-    margin: 30px auto;
-    width: 200px;
-    height: auto;
-}
-
-a.account:link, a.account:hover, a.account:active, a.account:visited {
-    color: orange;
-    text-decoration: blink;
-}
-
-#search {
-    margin: 30px auto;
-    width: 230px;
-    height: auto;
-}
-
-#foot_main {
-    padding: 5px;
-}
-
-a.outlink:link, a.outlink:visited {
-    color: blue;
-    text-decoration: blink;
-}
-
-a.outlink:hover, a.outlink:active {
-    color: red;
-    text-decoration: blink;
-}
-
-#quicklinks {
-    width: 90%;
-    height: 30px;
-    margin: 0px auto;
-    background-color: green;
-}
-
-#link {
-    height: 100%;
-    padding: 3px;
+.account {
     text-align: center;
+    margin: 0;
+    padding: 5px 0px 5px;
 }
 
-.navigation {
-    width: 80%;
-    color: black;
-    margin: 5px auto;
+.account a {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
 }
 
-.navigation a:link, a:visited {
-    color: black;
-    text-decoration: blink;
+.account a:hover {
+    background-color: gold;
 }
 
-/*页面的主要内容 页面添加高度*/
-#body_main {
-    width: 80%;
-    margin: 5px auto;
-    height: auto;
-    overflow: hidden;
+.account img {
+    width: 50px;
+    height: 50px;
+    vertical-align: bottom;
+}
+
+div.search {
+    text-align: center;
+    margin: 0;
+    padding: 5px 0px 5px;
+}
+
+div.search input, div.search button {
+    margin-top: 9px;
+    padding: 5px 6px;
+    line-height: 22px;
+    font-family: arial;
+    background: none;
+    outline: 0;
+    -webkit-appearance: none;
 }
 
 .bigImage {
-    width: 70%;
-    height: 500px;
     float: left;
-    overflow: hidden;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .bigImage img {
     width: 600px;
     height: 400px;
-    margin: 100px auto;
-}
-
-.bar {
-    font-family: 宋体;
-    font-size: 15px;
-    width: 30%;
-    height: auto;
-    float: left;
-}
-
-.bar a {
-    font-size: 20px;
-}
-
-/*普通链接*/
-a.common:link, a.common:visited {
-    color: black;
-    text-decoration: blink;
-}
-
-a.common:hover, a.common:active {
-    color: red;
-    text-decoration: blink;
 }
 
 .login-panel {
     background: #ffffff;
     box-shadow: 0 0 2px rgba(0, 0, 0, .13), 0 1px 5px rgba(0, 0, 0, .36), inset 0 0 0 1px rgba(255, 255, 255, .69);
-    height: 336px;
-    width: 30%;
+    width: 300px;
+    height: 400px;
     float: left;
-    margin: 80px 0px;
+    padding-top: 20px;
 }
 
 .login {
@@ -170,20 +63,27 @@ a.common:hover, a.common:active {
 }
 
 .login h1 {
-    color: aqua;
+    color: #ce8483;
     font-size: 30px;
 }
 
-span {
+.login span {
     font-size: 10px;
     color: red;
     margin: 0px;
     padding: 0px;
 }
 
-.login input {
+div.login input[type="text"], div.login input[type="password"] {
     height: 30px;
-    width: 200px;
+    width: 240px;
+    margin: 20px 0px;
+    border: 1px solid gray;
+}
+
+.login input[type="submit"] {
+    height: 30px;
+    width: 240px;
     margin: 10px 0px;
 }
 
@@ -191,83 +91,75 @@ span {
     color: gray;
 }
 
-.sign-panel {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.button {
-    height: 30px;
-    width: 200px;
-    margin: 10px 0px;
-    background-color: aquamarine;
-    color: white;
-}
-
-.button:hover {
-    background-color: aqua;
-}
-
-.sign input {
-    height: 30px;
-    width: 200px;
-    margin: 10px 0px;
-}
-
 .show {
-    border: 2px salmon;
-    margin: 5px;
+    margin: 8px;
     float: left;
-    background-color: white;
     text-align: center;
-    font-weight: bold;
-    color: black;
+    padding: 10px;
+    border: 2px salmon solid;
 }
 
 .show a {
     text-decoration: none;
-    color: black;
 }
 
 .show img {
-    height: 200px;
-    width: 150px;
-    padding: 5px;
+    width: 125px;
+    height: 125px;
 }
 
 .introduction {
+
+}
+
+.introduction img {
     float: left;
+    margin: 20px;
 }
 
-.introduction ul {
-    list-style: none;
-    font-size: 30px;
+.introduction p {
+    font-size: 25px;
 }
 
-.introduction a:link, a:visited {
-    background-color: gainsboro;
+.introduction a {
     text-decoration: none;
-    padding: 3px;
 }
 
-.introduction a:hover, a:active {
-    background-color: yellow;
-    text-decoration: none;
-    padding: 3px;
+.user-box {
+
 }
 
-.orderItem {
+div.user-box table {
+    height: auto;
+    width: 100%;
+}
+
+div.user-box tr {
+    height: 70px;
+}
+
+div.user-box tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.second-col {
+    width: 70%;
     margin: 5px;
 }
 
-.orderItem th {
-    background-color: chocolate;
+.user-error {
+    margin: 0 auto;
+    color: red;
 }
 
-.orderItem tr:nth-child(odd) {
-    background-color: aquamarine;
+.required {
+    color: red;
 }
 
-.orderItem tr:nth-child(even) {
-    background-color: darkcyan;
+input[type="password"] {
+    outline: none;
+    width: 70%;
+    border: 2px solid #1C1C1C;
+    padding: 8px 8px;
+    margin: -5px 0px;
 }

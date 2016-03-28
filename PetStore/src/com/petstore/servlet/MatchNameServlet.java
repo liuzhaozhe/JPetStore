@@ -28,7 +28,7 @@ public class MatchNameServlet extends HttpServlet {
         for (String name : productInfo
              ) {
             JsonObject temp = new JsonObject();
-            temp.addProperty("name", name);
+            temp.addProperty("value", name);
             array.add(temp);
         }
         PrintWriter out = response.getWriter();

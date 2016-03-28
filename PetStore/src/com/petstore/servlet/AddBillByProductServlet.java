@@ -45,6 +45,6 @@ public class AddBillByProductServlet extends HttpServlet {
         o[1] = product.getAmount();
         buyList.add(o);
         request.getSession().setAttribute("buyList", buyList);
-        response.sendRedirect("buy.jsp");
+        response.sendRedirect("/jsp/bill/buy.jsp");
     }
 }

@@ -28,6 +28,6 @@ public class GetBillDetailServlet extends HttpServlet {
         List<Item> billItemList = ItemDao.getInstance().getBillItemList(billId);
         request.getSession().setAttribute("bill", bill);
         request.getSession().setAttribute("billItemList", billItemList);
-        response.sendRedirect("billDetail.jsp");
+        response.sendRedirect("/jsp/bill/billDetail.jsp");
     }
 }

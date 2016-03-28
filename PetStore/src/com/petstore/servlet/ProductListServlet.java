@@ -23,6 +23,6 @@ public class ProductListServlet extends HttpServlet {
         String category2Id = request.getParameter("category2");
         List<String[]> productList = ProductDao.getInstance().getProdutInfo(category2Id);
         request.getSession().setAttribute("productList", productList);
-        response.sendRedirect("productList.jsp");
+        response.sendRedirect("/jsp/product/productList.jsp");
     }
 }
