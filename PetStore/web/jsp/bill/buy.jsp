@@ -170,12 +170,12 @@
                     <tbody id="body">
                     <c:forEach items="${sessionScope.buyList}" var="item">
                         <tr>
-                            <td>${item[0].productId}</td>
-                            <td>${item[0].productName}</td>
+                            <td>${item.productId}</td>
+                            <td>${item.productName}</td>
                             <td></td>
-                            <td><span>${item[0].price}</span>￥</td>
-                            <td><input type="number" value="${item[0].amount}" min="1" placeholder="购买数量"/></td>
-                            <td class="row-total-price"><span>${item[0].totalPrice}</span>￥</td>
+                            <td><span>${item.price}</span>￥</td>
+                            <td><input type="number" value="${item.amount}" min="1" placeholder="购买数量"/></td>
+                            <td class="row-total-price"><span>${item.totalPrice}</span>￥</td>
                             <td>
                                 <button>删除</button>
                             </td>

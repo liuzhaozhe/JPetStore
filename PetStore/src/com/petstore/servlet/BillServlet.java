@@ -34,12 +34,11 @@ public class BillServlet extends HttpServlet {
         bill.setCreateTime(currentTime);
         bill.setConsigneeAddress(address);
         bill.setConsigneePhone(phone);
-        List<Object[]> buyList = (List<Object[]>) request.getSession().getAttribute("buyList");
+        List<Item> buyList = (List<Item>) request.getSession().getAttribute("buyList");
         List<Item> billItemList = new ArrayList<Item>();
         double totalPrice = 0;
-        for (Object[] buyTemp : buyList
+        for (Item itemTemp : buyList
              ) {
-            Item itemTemp = (Item) buyTemp[0];
             totalPrice += itemTemp.getPrice() * itemTemp.getAmount();
             itemTemp.setTotalPrice(itemTemp.getPrice() * itemTemp.getAmount());
             billItemList.add(itemTemp);

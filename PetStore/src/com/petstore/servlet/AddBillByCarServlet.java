@@ -23,16 +23,13 @@ public class AddBillByCarServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = request.getParameter("productId");
-        List<Object[]> buyList = new ArrayList<Object[]>();
-        List<Object[]> itemList = (List<Object[]>) request.getSession().getAttribute("itemList");
+        List<Item> buyList = new ArrayList<Item>();
+        List<Item> itemList = (List<Item>) request.getSession().getAttribute("itemList");
         if(productId != null) {
-            for (Object[] objectTemp : itemList
+            for (Item item : itemList
                  ) {
-                Item itemTemp = (Item) objectTemp[0];
-                if (itemTemp.getProductId().equals(productId)){
-                    int stock = ProductDao.getInstance().getStock(productId);
-                    objectTemp[1] = stock;
-                    buyList.add(objectTemp);
+                if (item.getProductId().equals(productId)){
+                    buyList.add(item);
                 }
             }
         } else {

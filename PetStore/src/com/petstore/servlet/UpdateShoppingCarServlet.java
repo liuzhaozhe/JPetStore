@@ -31,15 +31,14 @@ public class UpdateShoppingCarServlet extends HttpServlet {
         item.setTotalPrice(amount * item.getPrice());
         boolean result = ItemDao.getInstance().update(item, username);
         String msg;
-        if (result==true) {
+        if (result) {
             msg = "success";
-            List<Object[]> itemList = (List<Object[]>) request.getSession().getAttribute("itemList");
-            for (Object[] temp : itemList
+            List<Item> itemList = (List<Item>) request.getSession().getAttribute("itemList");
+            for (Item temp : itemList
                  ) {
-                Item itemTemp = (Item) temp[0];
-                if (itemTemp.getProductId().equals(productId)){
-                    itemTemp.setAmount(item.getAmount());
-                    itemTemp.setTotalPrice(item.getTotalPrice());
+                if (temp.getProductId().equals(productId)){
+                    temp.setAmount(item.getAmount());
+                    temp.setTotalPrice(item.getTotalPrice());
                     break;
                 }
             }

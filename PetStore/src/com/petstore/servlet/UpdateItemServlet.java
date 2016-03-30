@@ -18,10 +18,9 @@ public class UpdateItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = request.getParameter("productId");
         int amount = Integer.parseInt(request.getParameter("amount"));
-        List<Object[]> buyList = (List<Object[]>) request.getSession().getAttribute("buyList");
-        for (Object[] temp : buyList
+        List<Item> buyList = (List<Item>) request.getSession().getAttribute("buyList");
+        for (Item itemTemp : buyList
                 ) {
-            Item itemTemp = (Item) temp[0];
             if (itemTemp.getProductId().equals(productId)){
                 itemTemp.setAmount(amount);
                 itemTemp.setTotalPrice(amount * itemTemp.getPrice());

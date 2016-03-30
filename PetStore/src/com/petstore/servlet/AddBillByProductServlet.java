@@ -39,11 +39,8 @@ public class AddBillByProductServlet extends HttpServlet {
         item.setPrice(product.getPrice());
         item.setTotalPrice(product.getPrice());
         // 页面以List方式接受商品信息
-        List<Object[]> buyList = new ArrayList<Object[]>();
-        Object o[] = new Object[2];
-        o[0] = item;
-        o[1] = product.getAmount();
-        buyList.add(o);
+        List<Item> buyList = new ArrayList<Item>();
+        buyList.add(item);
         request.getSession().setAttribute("buyList", buyList);
         response.sendRedirect("/jsp/bill/buy.jsp");
     }

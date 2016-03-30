@@ -28,17 +28,17 @@ public class ShoppingCarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = ((User)request.getSession().getAttribute("user")).getUsername();
         List<Item> items = ItemDao.getInstance().getCarItemList(username);
-        // 加入商品库存
-        List<Object[]> itemList = new ArrayList<Object[]>();
-        for (Item temp : items
-             ) {
-            Object[] o = new Object[2];
-            o[0] = temp;
-            int stock = ProductDao.getInstance().getStock(temp.getProductId());
-            o[1] = stock;
-            itemList.add(o);
-        }
-        request.getSession().setAttribute("itemList", itemList);
+//        // 加入商品库存
+//        List<Object[]> itemList = new ArrayList<Object[]>();
+//        for (Item temp : items
+//             ) {
+//            Object[] o = new Object[2];
+//            o[0] = temp;
+//            int stock = ProductDao.getInstance().getStock(temp.getProductId());
+//            o[1] = stock;
+//            itemList.add(o);
+//        }
+        request.getSession().setAttribute("itemList", items);
 
         response.sendRedirect("./jsp/user/shoppingCar.jsp");
     }
