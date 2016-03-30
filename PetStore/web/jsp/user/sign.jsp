@@ -141,11 +141,13 @@
                 <input class="name" type="password" name="password2" required="required"
                        placeholder="确认密码"/><span id="checkPassword"></span><br>
                 <br>
+                <input class="name" type="text" name="name" placeholder="姓名"/><br>
+                <br>
                 <input class="name" type="text" name="address" placeholder="地址"/><br>
                 <br>
                 <input class="name" type="text" name="address" placeholder="电话号码"/><br>
                 <br>
-                <input class="mail" type="text" name="email" placeholder="邮箱"/><br>
+                <input class="mail" type="email" name="email" placeholder="邮箱"/><br>
                 <br>
                 <button type="reset" class="btn btn-danger">重置</button>
                 <button type="submit" class="btn btn-danger">注册</button>
