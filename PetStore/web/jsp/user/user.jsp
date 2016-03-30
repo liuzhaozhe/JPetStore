@@ -143,15 +143,21 @@
                     <tr>
                         <td>密码：</td>
                         <td class="second-col">
-                            <input class="name" type="password" name="password" required="required"
+                            <input class="name" type="password" name="password"
                                    placeholder="密码(不需要更改不要填写)"/>
                         </td>
                     </tr>
                     <tr>
                         <td>确认密码：</td>
                         <td class="second-col">
-                            <input class="name" type="password" name="password2" required="required"
+                            <input class="name" type="password" name="password2"
                                    placeholder="确认密码(不需要更改不要填写)"/><span id="checkPassword"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>地址：</td>
+                        <td class="second-col">
+                            <input class="name" type="text" name="name" placeholder="姓名" value="${sessionScope.user.name}"/>
                         </td>
                     </tr>
                     <tr>
@@ -163,13 +169,13 @@
                     <tr>
                         <td>电话号码：</td>
                         <td class="second-col">
-                            <input class="name" type="text" name="address" placeholder="电话号码" value="${sessionScope.user.phone}"/>
+                            <input class="name" type="text" name="phone" placeholder="电话号码" value="${sessionScope.user.phone}"/>
                         </td>
                     </tr>
                     <tr>
                         <td>邮箱：</td>
                         <td class="second-col">
-                            <input class="mail" type="text" name="email" placeholder="邮箱" value="${sessionScope.user.email}"/>
+                            <input class="mail" type="email" name="email" placeholder="邮箱" value="${sessionScope.user.email}"/>
                         </td>
                     </tr>
                     <tr>

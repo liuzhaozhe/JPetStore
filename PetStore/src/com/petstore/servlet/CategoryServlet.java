@@ -26,6 +26,7 @@ public class CategoryServlet extends HttpServlet {
         String category = request.getParameter("category");
         Map<String, String> category2 = CategoryDao.getInstance().getCategory2(category);
         request.getSession().setAttribute("category2", category2);
+        request.getSession().setAttribute("categoryName", category);
         response.sendRedirect("/jsp/product/categoryList.jsp");
     }
 }

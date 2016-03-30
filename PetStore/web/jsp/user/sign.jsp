@@ -132,7 +132,7 @@
                 <div class="user-error">${requestScope.msg}</div>
             </c:if>
             <form action="/sign" method="post">
-                <input class="name" type="text" name="name" required="required"
+                <input class="name" type="text" name="username" required="required"
                        placeholder="用户名(只能是字母和数字的组合)"/><span id="checkUsername"></span><br>
                 <br>
                 <input class="name" type="password" name="password" required="required"
@@ -145,7 +145,7 @@
                 <br>
                 <input class="name" type="text" name="address" placeholder="地址"/><br>
                 <br>
-                <input class="name" type="text" name="address" placeholder="电话号码"/><br>
+                <input class="name" type="text" name="phone" placeholder="电话号码"/><br>
                 <br>
                 <input class="mail" type="email" name="email" placeholder="邮箱"/><br>
                 <br>

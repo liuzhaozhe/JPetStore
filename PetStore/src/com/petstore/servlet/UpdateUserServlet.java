@@ -25,22 +25,24 @@ public class UpdateUserServlet extends HttpServlet {
         String address = request.getParameter("address");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
-        if (pwd != null) {
+        String name = request.getParameter("name");
+        if (pwd != null && !pwd.equals("")) {
             user.setPassword(DigestUtils.md5Hex(pwd));
         }
         user.setAddress(address);
         user.setEmail(email);
         user.setPhone(phone);
+        user.setName(name);
         boolean result = UserDao.getInstance().update(user);
         String msg;
-        if (result == true) {
+        if (result) {
             request.getSession().setAttribute("user", user);
-            response.sendRedirect("user.jsp");
+            msg = "修改资料成功";
         } else {
             msg = "修改资料失败";
-            request.setAttribute("msg", msg);
-            request.getRequestDispatcher("user.jsp").forward(request, response);
         }
+        request.setAttribute("msg", msg);
+        request.getRequestDispatcher("/jsp/user/user.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

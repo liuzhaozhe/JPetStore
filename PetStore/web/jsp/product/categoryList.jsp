@@ -61,11 +61,46 @@
                         <ul class="nav navbar-nav">
                             <li><a href="./../../index.jsp">&nbsp;&nbsp;主页&nbsp;&nbsp;<span class="sr-only">(current)</span></a>
                             </li>
-                            <li><a href="/getCategory?category=BD">&nbsp;鸟&nbsp;</a></li>
-                            <li><a href="/getCategory?category=CA">&nbsp;猫&nbsp;</a></li>
-                            <li><a href="/getCategory?category=DG">&nbsp;狗&nbsp;</a></li>
-                            <li><a href="/getCategory?category=FI">&nbsp;鱼&nbsp;</a></li>
-                            <li><a href="/getCategory?category=RP">爬行动物</a></li>
+                            <li>
+                                <c:if test="${sessionScope.categoryName == 'BD'}">
+                                    <a class="active" href="/getCategory?category=BD">&nbsp;鸟&nbsp;</a>
+                                </c:if>
+                                <c:if test="${sessionScope.categoryName != 'BD'}">
+                                    <a href="/getCategory?category=BD">&nbsp;鸟&nbsp;</a>
+                                </c:if>
+                            </li>
+                            <li>
+                                <c:if test="${sessionScope.categoryName == 'CA'}">
+                                    <a class="active" href="/getCategory?category=CA">&nbsp;猫&nbsp;</a>
+                                </c:if>
+                                <c:if test="${sessionScope.categoryName != 'CA'}">
+                                    <a href="/getCategory?category=CA">&nbsp;猫&nbsp;</a>
+                                </c:if>
+                            </li>
+                            <li>
+                                <c:if test="${sessionScope.categoryName == 'DG'}">
+                                    <a class="active" href="/getCategory?category=DG">&nbsp;狗&nbsp;</a>
+                                </c:if>
+                                <c:if test="${sessionScope.categoryName != 'DG'}">
+                                    <a href="/getCategory?category=DG">&nbsp;狗&nbsp;</a>
+                                </c:if>
+                            </li>
+                            <li>
+                                <c:if test="${sessionScope.categoryName == 'FI'}">
+                                    <a class="active" href="/getCategory?category=FI">&nbsp;鱼&nbsp;</a>
+                                </c:if>
+                                <c:if test="${sessionScope.categoryName != 'FI'}">
+                                    <a href="/getCategory?category=FI">&nbsp;鱼&nbsp;</a>
+                                </c:if>
+                            </li>
+                            <li>
+                                <c:if test="${sessionScope.categoryName == 'RP'}">
+                                    <a class="active" href="/getCategory?category=RP">爬行动物</a>
+                                </c:if>
+                                <c:if test="${sessionScope.categoryName != 'RP'}">
+                                    <a href="/getCategory?category=RP">爬行动物</a>
+                                </c:if>
+                            </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                     <div class="clearfix"></div>

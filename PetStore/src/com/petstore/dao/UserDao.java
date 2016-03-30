@@ -32,13 +32,14 @@ public class UserDao {
         PreparedStatement statement = null;
         try {
             connection = JDBCUtil.getConnection();
-            String sql = "INSERT INTO user(username,password,address,email,phone) VALUES (?,?,?,?,?)";
+            String sql = "INSERT INTO user(username,password,address,email,phone,name) VALUES (?,?,?,?,?,?)";
             statement = connection.prepareStatement(sql);
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getAddress());
             statement.setString(4, user.getEmail());
             statement.setString(5, user.getPhone());
+            statement.setString(6, user.getName());
             int i = statement.executeUpdate();
             if (i == 1) {
                 result = true;
@@ -76,6 +77,7 @@ public class UserDao {
                 user.setAddress(resultSet.getString(3));
                 user.setEmail(resultSet.getString(4));
                 user.setPhone(resultSet.getString(5));
+                user.setName(resultSet.getString(6));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -127,13 +129,14 @@ public class UserDao {
         PreparedStatement statement = null;
         try {
             connection = JDBCUtil.getConnection();
-            String sql = "UPDATE user SET password = ?, address = ?, email = ?, phone = ? WHERE username = ?";
+            String sql = "UPDATE user SET password = ?, address = ?, email = ?, phone = ?, name = ? WHERE username = ?";
             statement = connection.prepareStatement(sql);
             statement.setString(1, user.getPassword());
             statement.setString(2, user.getAddress());
             statement.setString(3, user.getEmail());
             statement.setString(4, user.getPhone());
-            statement.setString(5, user.getUsername());
+            statement.setString(5, user.getName());
+            statement.setString(6, user.getUsername());
             int i = statement.executeUpdate();
             if (i == 1) {
                 result = true;

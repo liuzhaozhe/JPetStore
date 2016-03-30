@@ -134,7 +134,7 @@
                     <tr>
                         <td>收货人：</td>
                         <td>
-                            <input type="text" name="consignee" value="${sessionScope.user.username}"
+                            <input type="text" name="consignee" value="${sessionScope.user.name}"
                                        required="required"/>
                         </td>
                     </tr>
