@@ -18,7 +18,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!--coustom css-->
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="css/myStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="css/my-style.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
     <!--script-->
     <script src="js/jquery-1.12.1.min.js"></script>
