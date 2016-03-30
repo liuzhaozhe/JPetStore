@@ -19,18 +19,20 @@ public class SignServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html,charset=UTF-8");
-        String name = request.getParameter("username");
+        String username = request.getParameter("username");
         String pwd = request.getParameter("password");
         pwd = DigestUtils.md5Hex(pwd);
         String address = request.getParameter("address");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
+        String name = request.getParameter("name");
         User user = new User();
-        user.setUsername(name);
+        user.setUsername(username);
         user.setPassword(pwd);
         user.setAddress(address);
         user.setEmail(email);
         user.setPhone(phone);
+        user.setName(name);
         try {
             if (UserDao.getInstance().add(user)) {
                 request.getSession().setAttribute("user", user);
@@ -38,7 +40,7 @@ public class SignServlet extends HttpServlet {
             } else {
                 String msg = "注册失败";
                 request.setAttribute("msg", msg);
-                request.getRequestDispatcher("sign.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/user/sign.jsp").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();
