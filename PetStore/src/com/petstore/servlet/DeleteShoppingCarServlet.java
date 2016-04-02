@@ -25,10 +25,10 @@ public class DeleteShoppingCarServlet extends HttpServlet {
         String msg;
         if(b == true){
             msg = "success";
-            List<Object[]> itemList = (List<Object[]>) request.getSession().getAttribute("itemList");
+            List<Item> itemList = (List<Item>) request.getSession().getAttribute("itemList");
             int index = -1;
             for (int i = 0; i < itemList.size(); i++){
-                Item itemTemp = (Item) itemList.get(i)[0];
+                Item itemTemp = itemList.get(i);
                 if(itemTemp.getProductId().equals(productId)){
                     index = i;
                     break;
