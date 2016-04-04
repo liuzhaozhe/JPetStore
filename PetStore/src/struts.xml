@@ -18,13 +18,93 @@
                 </action>
                 <!--更新用户信息-->
                 <action name="user_update" class="com.petstore.action.UserAction" method="update">
+                        <result name="login">/jsp/user/login.jsp</result>
                         <result name="success">/jsp/user/user.jsp</result>
                         <result name="error">/jsp/user/user.jsp</result>
                 </action>
+                <!--判断用户名是否存在-->
+                <action name="checkUsername" class="com.petstore.action.UserAction" method="checkUsername">
+                        <result name="success" type="plainText">${msg}</result>
+                </action>
         </package>
         <package name="shoppingCar" extends="struts-default">
+                <!--查看购物车-->
                 <action name="shoppingCar" class="com.petstore.action.ShoppingCarAction">
+                        <result name="login">/jsp/user/login.jsp</result>
                         <result name="success" type="dispatcher">/jsp/user/shoppingCar.jsp</result>
+                </action>
+                <!--添加到购物车-->
+                <action name="addShoppingCar" class="com.petstore.action.ShoppingCarAction" method="addShoppingCar">
+                        <result name="login">/jsp/user/login.jsp</result>
+                        <result name="success" type="plainText">${msg}</result>
+                </action>
+                <!--删除购物车商品-->
+                <action name="deleteShoppingCar" class="com.petstore.action.ShoppingCarAction" method="deleteShoppingCar">
+                        <result name="login">/jsp/user/login.jsp</result>
+                        <result name="success" type="plainText">${msg}</result>
+                </action>
+                <!--更新购物车信息-->
+                <action name="updateShoppingCar" class="com.petstore.action.ShoppingCarAction" method="updateShoppingCar">
+                        <result name="login">/jsp/user/login.jsp</result>
+                        <result name="success" type="plainText">${msg}</result>
+                </action>
+        </package>
+        <package name="product" extends="struts-default">
+                <!--获取类别列表-->
+                <action name="getCategoryList" class="com.petstore.action.ProductAction" method="getCategoryList">
+                        <result name="success">/jsp/product/categoryList.jsp</result>
+                </action>
+                <!--获取商品列表-->
+                <action name="getProductList" class="com.petstore.action.ProductAction" method="getProductList">
+                        <result name="success">/jsp/product/productList.jsp</result>
+                </action>
+                <!--获取商品详细信息-->
+                <action name="getProductDetail" class="com.petstore.action.ProductAction" method="getProductDetail">
+                        <result name="success">/jsp/product/product.jsp</result>
+                </action>
+                <!--搜索的自动补全-->
+                <action name="matchName" class="com.petstore.action.ProductAction" method="matchName">
+                        <result name="success" type="plainText">${msg}</result>
+                </action>
+                <!--搜索-->
+                <action name="search" class="com.petstore.action.ProductAction" method="search">
+                        <result name="one">/jsp/product/productList.jsp</result>
+                        <result name="many">/jsp/product/product.jsp</result>
+                </action>
+        </package>
+        <package name="bill" extends="struts-default">
+                <!--获取账单信息-->
+                <action name="getBillList" class="com.petstore.action.BillAction" method="getBillList">
+                        <result name="login">/jsp/user/login.jsp</result>
+                        <result name="success">/jsp/bill/billList.jsp</result>
+                </action>
+                <!--获取账单详细信息-->
+                <action name="getBillDetail" class="com.petstore.action.BillAction" method="getBillDetail">
+                        <result name="login">/jsp/user/login.jsp</result>
+                        <result name="success">/jsp/bill/billDetail.jsp</result>
+                </action>
+                <!--通过商品页购买-->
+                <action name="addBillByProduct" class="com.petstore.action.BillAction" method="addBillByProduct">
+                        <result name="success">/jsp/bill/buy.jsp</result>
+                </action>
+                <!--通过购物车购买-->
+                <action name="addBillByCar" class="com.petstore.action.BillAction" method="addBillByCar">
+                        <result name="success">/jsp/bill/buy.jsp</result>
+                </action>
+                <!--删除不需要购买的商品-->
+                <action name="deleteItem" class="com.petstore.action.BillAction" method="deleteItem">
+                </action>
+                <!--更新购买商品信息-->
+                <action name="updateItem" class="com.petstore.action.BillAction" method="updateItem">
+                </action>
+                <!--生成账单-->
+                <action name="createBill" class="com.petstore.action.BillAction" method="createBill">
+                        <result name="success">/jsp/bill/okBuy.jsp</result>
+                </action>
+                <!--确认购买-->
+                <action name="confirmBuy" class="com.petstore.action.BillAction" method="confirmBuy">
+                        <result name="success">/jsp/bill/success.jsp</result>
+                        <result name="error">/jsp/bill/okBuy.jsp</result>
                 </action>
         </package>
 </struts>

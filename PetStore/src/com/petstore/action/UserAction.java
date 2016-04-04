@@ -7,6 +7,9 @@ import com.petstore.dao.UserDao;
 import com.petstore.entity.User;
 import org.apache.commons.codec.digest.DigestUtils;
 
+import java.io.PrintWriter;
+import java.util.Map;
+
 /**
  * Created by hezhujun on 2016/4/3.
  */
@@ -72,6 +75,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
      * @return
      */
     public String update(){
+        Map<String, Object> session = ActionContext.getContext().getSession();
         if (user.getPassword().equals("")){
             // 没有修密码
             String psd = ((User)ActionContext.getContext().getSession().get("user")).getPassword();
@@ -83,7 +87,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         // 修改成功
         if (result){
             // 更新session的内容
-            ActionContext.getContext().getSession().put("user", user);
+            session.put("user", user);
             msg = "修改资料成功";
             return SUCCESS;
         } else {
@@ -91,6 +95,20 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
             msg = "修改资料失败";
             return ERROR;
         }
+    }
+
+    /**
+     * 判断用户名是否存在
+     * @return
+     */
+    public String checkUsername(){
+        boolean isHas = UserDao.getInstance().checkUsername(user.getUsername());
+        if (isHas){
+            msg = "exist";
+        } else {
+            msg = "not exist";
+        }
+        return SUCCESS;
     }
 
     @Override
