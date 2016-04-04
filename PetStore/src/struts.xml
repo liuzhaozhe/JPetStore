@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+        <package name="user" extends="struts-default">
+                <!--注册-->
+                <action name="user_sign" class="com.petstore.action.UserAction" method="sign">
+                        <result name="success" type="redirect">/index.jsp</result>
+                        <result name="error">/jsp/user/sign.jsp</result>
+                </action>
+                <!--登录-->
+                <action name="user_login" class="com.petstore.action.UserAction" method="login">
+                        <result name="success" type="redirect">/index.jsp</result>
+                        <result name="error">/jsp/user/login.jsp</result>
+                </action>
+                <!--更新用户信息-->
+                <action name="user_update" class="com.petstore.action.UserAction" method="update">
+                        <result name="success">/jsp/user/user.jsp</result>
+                        <result name="error">/jsp/user/user.jsp</result>
+                </action>
+        </package>
+        <package name="shoppingCar" extends="struts-default">
+                <action name="shoppingCar" class="com.petstore.action.ShoppingCarAction">
+                        <result name="success" type="dispatcher">/jsp/user/shoppingCar.jsp</result>
+                </action>
+        </package>
+</struts>
