@@ -148,7 +148,7 @@ div.user-box tr:nth-of-type(odd) {
 }
 
 .user-error {
-    margin: 0 auto;
+    margin: 5px auto;
     color: red;
 }
 

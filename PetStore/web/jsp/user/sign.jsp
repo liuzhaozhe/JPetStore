@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -128,10 +129,10 @@
     <h3>用户注册</h3>
     <div class="container">
         <div class="user-box">
-            <c:if test="${requestScope.msg != null}">
-                <div class="user-error">${requestScope.msg}</div>
-            </c:if>
-            <form action="/sign" method="post">
+            <s:if test="msg != null">
+                <div class="user-error"><s:property value="msg"></s:property></div>
+            </s:if>
+            <form action="user_sign.action" method="post">
                 <input class="name" type="text" name="username" required="required"
                        placeholder="用户名(只能是字母和数字的组合)"/><span id="checkUsername"></span><br>
                 <br>

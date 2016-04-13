@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -131,11 +132,11 @@
         <div class="login-panel">
             <div class="login">
                 <h1>欢迎来到宠物商店</h1>
-                <form action="/login" method="post">
-                    <c:if test="${requestScope.msg != null}">
-                        <span id="msg">${requestScope.msg}</span>
+                <form action="user_login.action" method="post">
+                    <s:if test="msg != null">
+                        <span class="user-error">${requestScope.msg}</span>
                         <br/>
-                    </c:if>
+                    </s:if>
                     <input type="text" name="username" placeholder="账号" required="required"/>
                     <br/>
                     <div id="checkUsername">

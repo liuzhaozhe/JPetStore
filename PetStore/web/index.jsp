@@ -78,7 +78,7 @@
             </div>
             <div class="account">
                 <span>
-                    <a class="account" href="getShoppingCar"><img src="images/car.png" alt="购物车"/></a>
+                    <a class="account" href="shoppingCar.action"><img src="images/car.png" alt="购物车"/></a>
                 <%--判断是否登陆--%>
                 <c:if test="${sessionScope.user == null}">
                     <a href="./jsp/user/login.jsp">登录</a>

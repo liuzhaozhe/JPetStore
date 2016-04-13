@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -78,7 +79,7 @@
             </div>
             <div class="account">
                 <span>
-                    <a class="account" href="/getShoppingCar"><img src="../../images/car.png" alt="购物车"/></a>
+                    <a class="account" href="shoppingCar.action"><img src="../../images/car.png" alt="购物车"/></a>
                 <%--判断是否登陆--%>
                 <c:if test="${sessionScope.user == null}">
                     <a href="./../../jsp/user/login.jsp">登录</a>
@@ -132,13 +133,14 @@
             <c:if test="${requestScope.msg != null}">
                 <div class="user-error">${requestScope.msg}</div>
             </c:if>
-            <form action="/updateUser" method="post">
+            <form action="user_update.action" method="post">
                 <table>
                     <tr>
                         <td>用户名：</td>
                         <td class="second-col">
                             ${sessionScope.user.username}
                         </td>
+                        <input type="text" name="username" value="${sessionScope.user.username}" hidden="hidden"/>
                     </tr>
                     <tr>
                         <td>密码：</td>

@@ -29,7 +29,7 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         } else {
             String msg = "用户名或密码输入错误请重新登录";
             request.setAttribute("msg", msg);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/user/login.jsp").forward(request, response);
         }
     }
 
